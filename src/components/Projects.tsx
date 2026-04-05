@@ -3,9 +3,51 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
-import { ExternalLink, GitBranch, Tag } from "lucide-react";
+import { ExternalLink, GitBranch } from "lucide-react";
 import { data } from "@/data/portfolio";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+
+// Map tag name → simple-icons CDN slug
+const TECH_SLUG: Record<string, string> = {
+  "Next.js":        "nextdotjs",
+  "React":          "react",
+  "Node.js":        "nodedotjs",
+  "Python":         "python",
+  "TypeScript":     "typescript",
+  "JavaScript":     "javascript",
+  "Express.js":     "express",
+  "Spring Boot":    "springboot",
+  "PostgreSQL":     "postgresql",
+  "MongoDB":        "mongodb",
+  "Supabase":       "supabase",
+  "Prisma":         "prisma",
+  "Docker":         "docker",
+  "Vercel":         "vercel",
+  "GitHub Actions": "githubactions",
+  "GitHub API":     "github",
+  "Tailwind CSS":   "tailwindcss",
+  "n8n":            "n8n",
+  "Webflow API":    "webflow",
+  "Chrome Extension":"googlechrome",
+  "LangChain":      "langchain",
+};
+
+function TechIcon({ tag }: { tag: string }) {
+  const slug = TECH_SLUG[tag];
+  const [err, setErr] = useState(false);
+  if (!slug || err) return null;
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={`https://cdn.simpleicons.org/${slug}/a8a8a8`}
+      alt={tag}
+      width={12}
+      height={12}
+      className="shrink-0"
+      onError={() => setErr(true)}
+    />
+  );
+}
 
 const CAT_GRADIENT: Record<string, string> = {
   SaaS:        "from-emerald-400/20 via-teal-400/10 to-blue-400/10",
@@ -129,14 +171,14 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-md border"
+              className="inline-flex items-center gap-1.5 text-xs font-medium px-2 py-0.5 rounded-md border"
               style={{
                 borderColor: "var(--border)",
                 color: "var(--text-dim)",
                 background: "var(--surface)",
               }}
             >
-              <Tag size={9} />
+              <TechIcon tag={tag} />
               {tag}
             </span>
           ))}

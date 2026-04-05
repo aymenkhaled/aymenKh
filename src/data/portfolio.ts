@@ -417,8 +417,62 @@ export const data: PortfolioData = {
 
   testimonials: [
     {
+      name: "James O.",
+      photo: "",
+      project: "BookieLink Support Bot",
+      review:
+        "Ahmed built us a RAG-powered support chatbot that handles the majority of our customer queries without any human involvement. Support tickets dropped by 70% in the first month alone. Exceptional work.",
+      rating: 5,
+      platform: "Upwork",
+    },
+    {
+      name: "Kevin T.",
+      photo: "",
+      project: "MiniSport Internal Assistant",
+      review:
+        "We needed an internal tool our team could query in plain English. Ahmed delivered a production-ready RAG system in under two weeks — clean, well-documented, and it just works. Highly recommend.",
+      rating: 5,
+      platform: "Upwork",
+    },
+    {
+      name: "Sarah M.",
+      photo: "",
+      project: "iPrint AI Voice & Chat Agent",
+      review:
+        "Our support volume was overwhelming. Ahmed integrated an AI voice and chat agent that now handles 500+ queries daily with Stripe payments baked in. Response time improved by 45%. Absolutely stellar.",
+      rating: 5,
+      platform: "Upwork",
+    },
+    {
+      name: "Lina B.",
+      photo: "",
+      project: "OlalaHomes Property Dashboard",
+      review:
+        "Ahmed took our fragmented spreadsheets and built a beautiful, fully-functional property management dashboard from scratch. The occupancy and revenue tracking now saves us hours every week.",
+      rating: 5,
+      platform: "Upwork",
+    },
+    {
+      name: "Marcus R.",
+      photo: "",
+      project: "Lead Acquisition Automation",
+      review:
+        "The lead pipeline Ahmed built pulls qualified prospects from multiple sources, enriches them, and drops them straight into our CRM — fully automated. We cut manual screening time by 80%. Worth every penny.",
+      rating: 5,
+      platform: "Upwork",
+    },
+    {
+      name: "David K.",
+      photo: "",
+      project: "TechForce Developer Sourcing Pipeline",
+      review:
+        "Ahmed automated our entire developer sourcing workflow. We went from hours of manual GitHub searching to having warm, enriched profiles delivered automatically into Gospott. Game-changer for our recruiting ops.",
+      rating: 5,
+      platform: "Upwork",
+    },
+    {
       name: "Client Testimonial",
-      photo: "/placeholder.svg",
+      photo: "",
       project: "AI Automation System",
       review:
         "Ahmed delivered an exceptional RAG system that completely transformed our customer support pipeline. Clear communication, on-time delivery, and the results speak for themselves.",
