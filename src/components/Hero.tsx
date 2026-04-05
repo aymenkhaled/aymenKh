@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, ArrowRight } from "lucide-react";
 import { data } from "@/data/portfolio";
-import { MagneticButton } from "@/components/ui/MagneticButton";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 const WORDS = ["AI systems", "automations", "RAG pipelines", "AI agents"];
@@ -16,11 +15,9 @@ export function Hero() {
   const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setWordIdx((i) => (i + 1) % WORDS.length);
-    }, 2400);
-    return () => clearTimeout(timeoutId);
-  }, [wordIdx]);
+    const t = setInterval(() => setWordIdx((i) => (i + 1) % WORDS.length), 2600);
+    return () => clearInterval(t);
+  }, []);
 
   const initials = data.name
     .split(" ")
@@ -35,67 +32,50 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ background: "var(--bg)" }}
     >
-      {/* Grid background */}
+      {/* Grid */}
       <div className="hero-grid" aria-hidden="true" />
 
-      {/* Central glow orb */}
+      {/* Center glow */}
       <div
-        className="pointer-events-none absolute rounded-full blur-[180px]"
+        className="pointer-events-none absolute rounded-full blur-[200px]"
         style={{
-          width: 800,
-          height: 800,
-          top: "50%",
+          width: 700,
+          height: 700,
+          top: "40%",
           left: "50%",
-          transform: "translate(-50%, -60%)",
+          transform: "translate(-50%, -50%)",
           background: "rgba(16,185,129,0.07)",
         }}
         aria-hidden="true"
       />
 
-      {/* Lamp line at top — pulled from ohmfordev/21st.dev */}
-      <div
-        className="pointer-events-none absolute top-0 left-0 right-0 flex justify-center"
-        aria-hidden="true"
-      >
+      {/* Top lamp line */}
+      <div className="pointer-events-none absolute top-0 inset-x-0 flex flex-col items-center" aria-hidden="true">
         <div
-          className="h-px w-64 mt-0"
-          style={{
-            background: "linear-gradient(90deg, transparent, var(--accent), transparent)",
-            opacity: 0.6,
-          }}
+          className="h-px w-60"
+          style={{ background: "linear-gradient(90deg, transparent, var(--accent), transparent)", opacity: 0.55 }}
         />
-      </div>
-      <div
-        className="pointer-events-none absolute top-0 left-0 right-0 flex justify-center"
-        aria-hidden="true"
-      >
         <div
           className="rounded-full blur-3xl"
-          style={{
-            width: 320,
-            height: 80,
-            marginTop: -40,
-            background: "var(--accent)",
-            opacity: 0.12,
-          }}
+          style={{ width: 280, height: 64, marginTop: -32, background: "var(--accent)", opacity: 0.1 }}
         />
       </div>
 
       {/* ── CONTENT ── */}
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-6 pt-24 pb-20 flex flex-col items-center text-center">
+      <div className="relative z-10 w-full max-w-2xl mx-auto px-6 pt-28 pb-20 flex flex-col items-center text-center">
 
-        {/* Small avatar */}
+        {/* Avatar */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.7, y: -10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.55, ease }}
-          className="mb-6"
+          initial={{ opacity: 0, scale: 0.75 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease }}
+          className="mb-5"
         >
           <div
-            className="relative w-[72px] h-[72px] rounded-full overflow-hidden"
+            className="relative w-[68px] h-[68px] rounded-full overflow-hidden"
             style={{
               border: "2px solid var(--accent)",
-              boxShadow: "0 0 0 4px var(--accent-dim), 0 0 32px var(--accent-glow)",
+              boxShadow: "0 0 0 4px var(--accent-dim), 0 0 28px var(--accent-glow)",
             }}
           >
             {!imgError ? (
@@ -118,12 +98,12 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Availability pill */}
+        {/* Availability */}
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
+          initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease, delay: 0.1 }}
-          className="mb-8"
+          transition={{ duration: 0.4, ease, delay: 0.1 }}
+          className="mb-7"
         >
           <div className="avail-badge" role="status" aria-live="polite">
             <span className="avail-dot" />
@@ -131,36 +111,41 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* ── BIG HEADLINE — Tommy Jepsen spring word swap ── */}
+        {/* ── HEADLINE ── */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease, delay: 0.18 }}
-          className="font-black leading-[1.08] tracking-tighter mb-6"
-          style={{
-            fontSize: "clamp(2.6rem, 7vw, 5rem)",
-            letterSpacing: "-0.05em",
-            color: "var(--text)",
-          }}
+          transition={{ duration: 0.6, ease, delay: 0.18 }}
+          className="font-black leading-[1.1] tracking-tighter mb-2"
+          style={{ fontSize: "clamp(2.4rem, 6.5vw, 4.5rem)", letterSpacing: "-0.048em", color: "var(--text)" }}
+        >
+          <span style={{ color: "var(--accent)" }}>Full Stack</span>{" "}&amp;{" "}
+          <span style={{ color: "var(--text)" }}>Automation</span>
+          <br />
+          <span style={{ color: "var(--text)" }}>Engineer</span>
+        </motion.h1>
+
+        {/* Animated sub-line */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease, delay: 0.28 }}
+          className="font-semibold mb-6 flex items-center justify-center gap-2 flex-wrap"
+          style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)", color: "var(--text-muted)" }}
         >
           I build{" "}
-          {/* Animated word container — spring slide like Tommy Jepsen */}
           <span
-            className="relative inline-flex justify-center overflow-hidden"
-            style={{ verticalAlign: "bottom", height: "1.15em", minWidth: "clamp(160px, 36vw, 360px)" }}
+            className="relative inline-block font-black"
+            style={{ minWidth: "10ch" }}
           >
-            &nbsp;
-            {WORDS.map((word, index) => (
+            <AnimatePresence mode="wait">
               <motion.span
-                key={index}
-                className="absolute inset-0 flex items-center justify-center font-black"
-                initial={{ opacity: 0, y: "100%" }}
-                transition={{ type: "spring", stiffness: 50, damping: 14 }}
-                animate={
-                  wordIdx === index
-                    ? { y: "0%", opacity: 1 }
-                    : { y: wordIdx > index ? "-100%" : "100%", opacity: 0 }
-                }
+                key={wordIdx}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.22, ease }}
+                className="inline-block"
                 style={{
                   background: "linear-gradient(135deg, #10b981 0%, #3b82f6 100%)",
                   WebkitBackgroundClip: "text",
@@ -168,30 +153,29 @@ export function Hero() {
                   backgroundClip: "text",
                 }}
               >
-                {word}
+                {WORDS[wordIdx]}
               </motion.span>
-            ))}
+            </AnimatePresence>
           </span>
-          <br />
-          that actually work.
-        </motion.h1>
+          {" "}that actually work.
+        </motion.p>
 
         {/* Bio */}
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease, delay: 0.3 }}
-          className="text-base md:text-lg leading-relaxed mb-8 max-w-2xl"
+          transition={{ duration: 0.5, ease, delay: 0.36 }}
+          className="text-sm md:text-base leading-relaxed mb-7 max-w-xl"
           style={{ color: "var(--text-muted)" }}
         >
           {data.bio}
         </motion.p>
 
-        {/* Full-stack skill chips */}
+        {/* Skill chips */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease, delay: 0.38 }}
+          transition={{ duration: 0.45, ease, delay: 0.44 }}
           className="flex flex-wrap justify-center gap-2 mb-8"
         >
           {["Next.js", "Node.js", "Python", "PostgreSQL", "n8n", "LangChain", "OpenAI API"].map((skill) => (
@@ -205,43 +189,39 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* CTAs */}
+        {/* CTAs — plain, no magnetic wrapper */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease, delay: 0.48 }}
+          transition={{ duration: 0.45, ease, delay: 0.52 }}
           className="flex gap-3 flex-wrap justify-center mb-10"
         >
-          <MagneticButton>
-            <a href="#booking" className="btn-primary">
-              <Calendar size={15} />
-              Book a Free Call
-            </a>
-          </MagneticButton>
-          <MagneticButton>
-            <a href="#projects" className="btn-secondary">
-              See My Work
-              <ArrowRight size={15} />
-            </a>
-          </MagneticButton>
+          <a href="#booking" className="btn-primary">
+            <Calendar size={15} />
+            Book a Free Call
+          </a>
+          <a href="#projects" className="btn-secondary">
+            See My Work
+            <ArrowRight size={15} />
+          </a>
         </motion.div>
 
-        {/* Stats row */}
+        {/* Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease, delay: 0.55 }}
+          transition={{ duration: 0.45, ease, delay: 0.6 }}
           className="flex flex-wrap justify-center gap-px overflow-hidden rounded-2xl border"
           style={{ borderColor: "var(--border)", background: "var(--border)" }}
         >
           {data.stats.map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col items-center justify-center py-4 px-6 min-w-[110px]"
+              className="flex flex-col items-center justify-center py-4 px-6 min-w-[100px]"
               style={{ background: "var(--surface)" }}
             >
               <span
-                className="font-black text-2xl leading-none mb-1"
+                className="font-black text-xl leading-none mb-1"
                 style={{ color: "var(--text)", letterSpacing: "-0.04em" }}
               >
                 <AnimatedCounter value={stat.value} />
