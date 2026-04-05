@@ -75,7 +75,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1], delay }}
-      className="group relative rounded-2xl border overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
+      className="group relative rounded-2xl border overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col"
       style={{
         background: "var(--surface)",
         borderColor: "var(--border)",
@@ -89,7 +89,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
             src={project.thumbnail}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover object-top"
             onError={() => setImgErr(true)}
           />
         ) : (
@@ -160,7 +160,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       </div>
 
       {/* Card body */}
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-1">
         <h3
           className="text-base font-bold mb-1.5 leading-tight"
           style={{ color: "var(--text)", letterSpacing: "-0.01em" }}
@@ -189,10 +189,10 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
           ))}
         </div>
 
-        {/* Case Study link */}
+        {/* Case Study link — always pinned to bottom */}
         <div
-          className="mt-4 pt-4 border-t"
-          style={{ borderColor: "var(--border)" }}
+          className="mt-auto pt-4 border-t"
+          style={{ marginTop: "auto", paddingTop: "1rem", borderTop: "1px solid var(--border)" }}
         >
           <a
             href={`/projects/${toSlug(project.title)}`}

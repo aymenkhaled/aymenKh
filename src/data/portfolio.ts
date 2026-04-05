@@ -9,19 +9,19 @@ export const data: PortfolioData = {
     "Full Stack Developer",
     "LLM Pipeline Builder",
   ],
-  bio: "I build production-grade RAG systems, autonomous AI agents, and scalable n8n workflows that save businesses 1000+ hours — specializing in e-commerce, SaaS, and B2B automation.",
+  bio: "Full stack & automation engineer with 2+ years building production AI systems, RAG pipelines, and n8n workflows for SaaS, e-commerce, and B2B clients — 15+ projects delivered across international clients.",
   availability: true,
 
   stats: [
     { value: "15+",  label: "Projects Delivered" },
     { value: "10+",  label: "Happy Clients" },
     { value: "2+",   label: "Years Experience" },
-    { value: "100%", label: "Job Success" },
+    { value: "100%", label: "On-Time Delivery" },
   ],
 
   platforms: [
-    { name: "Upwork",   badge: "Top Rated",    url: "https://www.upwork.com/freelancers/ahmedbenyahia" },
-    { name: "LinkedIn", badge: "Open to Work", url: "https://linkedin.com/in/ahmedbenyahia" },
+    { name: "Upwork",   badge: "Available",     url: "https://www.upwork.com/freelancers/ahmedbenyahia" },
+    { name: "LinkedIn", badge: "Open to Work",  url: "https://linkedin.com/in/ahmedbenyahia" },
   ],
 
   clients: [
@@ -423,7 +423,7 @@ export const data: PortfolioData = {
       review:
         "Ahmed built us a RAG-powered support chatbot that handles the majority of our customer queries without any human involvement. Support tickets dropped by 70% in the first month alone. Exceptional work.",
       rating: 5,
-      platform: "Upwork",
+      platform: "Direct",
     },
     {
       name: "Kevin T.",
@@ -432,7 +432,7 @@ export const data: PortfolioData = {
       review:
         "We needed an internal tool our team could query in plain English. Ahmed delivered a production-ready RAG system in under two weeks — clean, well-documented, and it just works. Highly recommend.",
       rating: 5,
-      platform: "Upwork",
+      platform: "Direct",
     },
     {
       name: "Sarah M.",
@@ -441,7 +441,7 @@ export const data: PortfolioData = {
       review:
         "Our support volume was overwhelming. Ahmed integrated an AI voice and chat agent that now handles 500+ queries daily with Stripe payments baked in. Response time improved by 45%. Absolutely stellar.",
       rating: 5,
-      platform: "Upwork",
+      platform: "Direct",
     },
     {
       name: "Lina B.",
@@ -450,7 +450,7 @@ export const data: PortfolioData = {
       review:
         "Ahmed took our fragmented spreadsheets and built a beautiful, fully-functional property management dashboard from scratch. The occupancy and revenue tracking now saves us hours every week.",
       rating: 5,
-      platform: "Upwork",
+      platform: "Direct",
     },
     {
       name: "Marcus R.",
@@ -459,7 +459,7 @@ export const data: PortfolioData = {
       review:
         "The lead pipeline Ahmed built pulls qualified prospects from multiple sources, enriches them, and drops them straight into our CRM — fully automated. We cut manual screening time by 80%. Worth every penny.",
       rating: 5,
-      platform: "Upwork",
+      platform: "Direct",
     },
     {
       name: "David K.",
@@ -468,7 +468,7 @@ export const data: PortfolioData = {
       review:
         "Ahmed automated our entire developer sourcing workflow. We went from hours of manual GitHub searching to having warm, enriched profiles delivered automatically into Gospott. Game-changer for our recruiting ops.",
       rating: 5,
-      platform: "Upwork",
+      platform: "Direct",
     },
     {
       name: "Client Testimonial",
@@ -477,7 +477,7 @@ export const data: PortfolioData = {
       review:
         "Ahmed delivered an exceptional RAG system that completely transformed our customer support pipeline. Clear communication, on-time delivery, and the results speak for themselves.",
       rating: 5,
-      platform: "Upwork",
+      platform: "Direct",
     },
   ],
 
