@@ -344,7 +344,7 @@ export const data: PortfolioData = {
       description:
         "Chrome extension that captures Upwork job listings and forwards them to an n8n pipeline — automatically enriching each lead with verified emails via FindThatLead and Apollo to build a ready-to-contact outreach list.",
       thumbnail: "/upwork.png",
-      tags: ["Chrome Extension", "n8n", "FindThatLead", "Apollo API", "Web Scraping"],
+      tags: ["Chrome Extension", "n8n", "FindMyEmail", "Apollo API", "Web Scraping"],
       category: "AI Automation",
       liveUrl: "",
       githubUrl: "",

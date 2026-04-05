@@ -3,11 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
-import { ExternalLink, GitBranch } from "lucide-react";
+import { ExternalLink, GitBranch, ArrowRight } from "lucide-react";
 import { data } from "@/data/portfolio";
+import { toSlug } from "@/lib/slug";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-// Map tag name → simple-icons CDN slug
+// Map tag name → simple-icons slug (used with Iconify API)
 const TECH_SLUG: Record<string, string> = {
   "Next.js":        "nextdotjs",
   "React":          "react",
@@ -26,8 +27,12 @@ const TECH_SLUG: Record<string, string> = {
   "GitHub Actions": "githubactions",
   "GitHub API":     "github",
   "Tailwind CSS":   "tailwindcss",
+  "OpenAI API":     "openai",
+  "Gemini API":     "googlegemini",
   "n8n":            "n8n",
+  "Twilio":         "twilio",
   "Webflow API":    "webflow",
+  "LinkedIn API":   "linkedin",
   "Chrome Extension":"googlechrome",
   "LangChain":      "langchain",
 };
@@ -39,7 +44,7 @@ function TechIcon({ tag }: { tag: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`https://cdn.simpleicons.org/${slug}/a8a8a8`}
+      src={`https://api.iconify.design/simple-icons:${slug}.svg?color=%23a8a8a8`}
       alt={tag}
       width={12}
       height={12}
@@ -182,6 +187,20 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
               {tag}
             </span>
           ))}
+        </div>
+
+        {/* Case Study link */}
+        <div
+          className="mt-4 pt-4 border-t"
+          style={{ borderColor: "var(--border)" }}
+        >
+          <a
+            href={`/projects/${toSlug(project.title)}`}
+            className="inline-flex items-center gap-1.5 text-xs font-bold transition-opacity hover:opacity-70"
+            style={{ color: "var(--accent)" }}
+          >
+            View Case Study <ArrowRight size={11} />
+          </a>
         </div>
       </div>
     </motion.article>
