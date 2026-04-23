@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion";
 import {
-  Link2, MessageCircle, GitBranch, Mail, CalendarClock,
+  BriefcaseBusiness, Link2, MessageCircle, GitBranch, Mail, CalendarClock,
 } from "lucide-react";
 import { data } from "@/data/portfolio";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const SOCIAL_LINKS = [
+  { key: "upwork", label: "Upwork", Icon: BriefcaseBusiness },
   { key: "linkedin", label: "LinkedIn", Icon: Link2 },
   { key: "whatsapp", label: "WhatsApp", Icon: MessageCircle },
   { key: "github", label: "GitHub", Icon: GitBranch },
@@ -17,7 +18,7 @@ const SOCIAL_LINKS = [
 
 function isValidCalendlyUrl(url?: string) {
   if (!url) return false;
-  return /^https:\/\/calendly\.com\/[A-Za-z0-9._-]+\/[A-Za-z0-9._-]+\/?$/i.test(url);
+  return /^https:\/\/calendly\.com\/[A-Za-z0-9._-]+(?:\/[A-Za-z0-9._-]+)?\/?$/i.test(url);
 }
 
 export function Booking() {
@@ -58,7 +59,7 @@ export function Booking() {
             borderColor: "var(--border)",
           }}
         >
-          <div className="flex flex-col items-center justify-center gap-4 py-16 px-6 text-center">
+          <div className="flex flex-col items-center justify-center gap-4 py-8 px-4 text-center">
             <div
               className="w-16 h-16 rounded-2xl flex items-center justify-center border"
               style={{
@@ -79,17 +80,26 @@ export function Booking() {
             </div>
 
             {hasCalendly ? (
-              <MagneticButton>
-                <a
-                  href={social.calendly}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                >
-                  <CalendarClock size={15} />
-                  Schedule a Call
-                </a>
-              </MagneticButton>
+              <>
+                <div className="w-full rounded-xl overflow-hidden border" style={{ borderColor: "var(--border)" }}>
+                  <iframe
+                    title="Schedule a call with Aymen Khaled"
+                    src={`${social.calendly}?hide_event_type_details=1&hide_gdpr_banner=1`}
+                    className="w-full h-[680px] bg-white"
+                  />
+                </div>
+                <MagneticButton>
+                  <a
+                    href={social.calendly}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    <CalendarClock size={15} />
+                    Open Calendly Directly
+                  </a>
+                </MagneticButton>
+              </>
             ) : (
               <p className="text-sm" style={{ color: "var(--text-dim)" }}>
                 Calendar is temporarily unavailable. Please contact me directly via WhatsApp or email below.

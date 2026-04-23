@@ -7,35 +7,10 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, GitBranch } from "lucide-react";
 import type { CaseStudy } from "@/data/caseStudies";
 import type { Project } from "@/types";
-
-const TECH_SLUG: Record<string, string> = {
-  "React":          "react",
-  "Next.js":        "nextdotjs",
-  "Node.js":        "nodedotjs",
-  "Python":         "python",
-  "TypeScript":     "typescript",
-  "JavaScript":     "javascript",
-  "Express.js":     "express",
-  "PostgreSQL":     "postgresql",
-  "MongoDB":        "mongodb",
-  "Docker":         "docker",
-  "Tailwind CSS":   "tailwindcss",
-  "OpenAI":         "openai",
-  "Stripe":         "stripe",
-  "Puppeteer":      "puppeteer",
-  "Cheerio":        "cheerio",
-  "Lighthouse":     "googlelighthouse",
-  "LangChain":      "langchain",
-  "Redux":          "redux",
-  "FastAPI":        "fastapi",
-  "Django":         "django",
-  "Groq":           "groq",
-  "AWS":            "amazonaws",
-  "Git":            "git",
-};
+import { getTechIconUrl } from "@/lib/techIcons";
 
 function TechPill({ tag }: { tag: string }) {
-  const slug = TECH_SLUG[tag];
+  const iconUrl = getTechIconUrl(tag);
   const [err, setErr] = useState(false);
   return (
     <span
@@ -46,16 +21,20 @@ function TechPill({ tag }: { tag: string }) {
         color: "var(--text-muted)",
       }}
     >
-      {slug && !err && (
+      {iconUrl && !err ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={`https://api.iconify.design/simple-icons:${slug}.svg?color=%23a8a8a8`}
+          src={iconUrl}
           alt=""
           width={13}
           height={13}
           className="shrink-0"
           onError={() => setErr(true)}
         />
+      ) : (
+        <span className="inline-flex h-4 min-w-4 items-center justify-center rounded bg-[var(--accent-dim)] px-1 text-[9px] font-black text-[var(--accent)]">
+          {tag.slice(0, 2).toUpperCase()}
+        </span>
       )}
       {tag}
     </span>

@@ -22,7 +22,7 @@ export function Navbar() {
     { href: "#services", label: "Services" },
     { href: "#projects", label: "Projects" },
     { href: "#experience", label: "Experience" },
-    { href: "#testimonials", label: "Reviews" },
+    { href: "#outcomes", label: "Outcomes" },
     { href: "#booking", label: "Contact" },
   ];
 

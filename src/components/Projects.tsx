@@ -6,42 +6,22 @@ import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { ExternalLink, GitBranch, ArrowRight, Briefcase, BarChart3, Eye } from "lucide-react";
 import { data } from "@/data/portfolio";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-
-const TECH_SLUG: Record<string, string> = {
-  React: "react",
-  "Next.js": "nextdotjs",
-  "Node.js": "nodedotjs",
-  Python: "python",
-  TypeScript: "typescript",
-  JavaScript: "javascript",
-  "Express.js": "express",
-  PostgreSQL: "postgresql",
-  MongoDB: "mongodb",
-  Docker: "docker",
-  "Tailwind CSS": "tailwindcss",
-  OpenAI: "openai",
-  WebSocket: "websocket",
-  Stripe: "stripe",
-  Puppeteer: "puppeteer",
-  Cheerio: "cheerio",
-  Lighthouse: "googlelighthouse",
-  LangChain: "langchain",
-  Redux: "redux",
-  FastAPI: "fastapi",
-  Django: "django",
-  Groq: "groq",
-  AWS: "amazonaws",
-  Git: "git",
-};
+import { getTechIconUrl } from "@/lib/techIcons";
 
 function TechIcon({ tag }: { tag: string }) {
-  const slug = TECH_SLUG[tag];
+  const iconUrl = getTechIconUrl(tag);
   const [err, setErr] = useState(false);
-  if (!slug || err) return null;
+  if (!iconUrl || err) {
+    return (
+      <span className="inline-flex h-4 min-w-4 items-center justify-center rounded bg-[var(--accent-dim)] px-1 text-[9px] font-black text-[var(--accent)]">
+        {tag.slice(0, 2).toUpperCase()}
+      </span>
+    );
+  }
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`https://api.iconify.design/simple-icons:${slug}.svg?color=%23a8a8a8`}
+      src={iconUrl}
       alt={tag}
       width={12}
       height={12}

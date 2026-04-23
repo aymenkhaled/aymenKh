@@ -1,4 +1,4 @@
-import { data } from "@/data/portfolio";
+﻿import { data } from "@/data/portfolio";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -7,7 +7,7 @@ export function Footer() {
     { href: "#services",     label: "Services" },
     { href: "#projects",     label: "Projects" },
     { href: "#experience",   label: "Experience" },
-    { href: "#testimonials", label: "Reviews" },
+    { href: "#outcomes", label: "Outcomes" },
     { href: "#booking",      label: "Contact" },
   ];
 
@@ -29,7 +29,7 @@ export function Footer() {
             <span style={{ color: "var(--accent)" }}>.</span>
           </a>
           <span className="text-xs" style={{ color: "var(--text-dim)" }}>
-            © {year} {data.name}. All rights reserved.
+            &copy; {year} {data.name}. All rights reserved.
           </span>
         </div>
 
@@ -58,3 +58,5 @@ export function Footer() {
     </footer>
   );
 }
+
+

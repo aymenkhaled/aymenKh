@@ -2,20 +2,20 @@ import type { PortfolioData } from "@/types";
 
 export const data: PortfolioData = {
   name: "Aymen Khaled",
-  photo: "/aymen.jpg",
+  photo: "/pic.png",
   title: [
-    "Full Stack Web and Mobile Developer",
-    "SaaS Builder",
+    "AI SaaS & Full-Stack Developer",
     "AI Integrations Specialist",
-    "React, Node.js and Python",
+    "SaaS Platform Builder",
+    "Automation Systems Developer",
   ],
-  bio: "Full Stack Web and Mobile Developer specialized in SaaS and AI integrations. I build production products with React, Node.js, Python, real-time systems, and practical automation that helps teams move faster.",
+  bio: "AI SaaS and full-stack developer building production SaaS platforms, AI integrations, automation systems, and full-stack web/mobile apps with React, Node.js, Python, OpenAI, Groq, and real-time architecture.",
   availability: true,
 
   stats: [
     { value: "7+", label: "SaaS and AI Products" },
     { value: "15+", label: "Projects Delivered" },
-    { value: "4+", label: "Years Building" },
+    { value: "5+", label: "Years Building" },
     { value: "100%", label: "Client Focus" },
   ],
 
@@ -38,7 +38,7 @@ export const data: PortfolioData = {
     {
       title: "SaaS Platform Development",
       description:
-        "End-to-end SaaS products with multi-tenant architecture, role-based access, billing, and production deployment.",
+        "End-to-end SaaS products with multi-tenant architecture, role-based access, billing, AI workflows, and production deployment.",
       icon: "layers",
       size: "featured",
     },
@@ -133,18 +133,31 @@ export const data: PortfolioData = {
     { name: "JavaScript", category: "language" },
     { name: "TypeScript", category: "language" },
     { name: "Python", category: "language" },
+    { name: "C#", category: "language" },
+    { name: "PHP", category: "language" },
+    { name: "Java", category: "language" },
+    { name: "C++", category: "language" },
     { name: "Node.js", category: "backend" },
     { name: "FastAPI", category: "backend" },
     { name: "Django", category: "backend" },
+    { name: "Laravel", category: "backend" },
     { name: "Express.js", category: "backend" },
     { name: "OpenAI", category: "ai" },
     { name: "Groq", category: "ai" },
     { name: "LangChain", category: "ai" },
+    { name: "WebSocket", category: "backend" },
+    { name: "HubSpot", category: "automation" },
+    { name: "Stripe", category: "payments" },
     { name: "PostgreSQL", category: "database" },
     { name: "MongoDB", category: "database" },
+    { name: "SQL Server", category: "database" },
+    { name: "Firebase", category: "database" },
     { name: "Docker", category: "devops" },
+    { name: "Jenkins", category: "devops" },
     { name: "Git", category: "devops" },
     { name: "AWS", category: "devops" },
+    { name: "Expo", category: "mobile" },
+    { name: "IoT", category: "mobile" },
   ],
 
   projects: [
@@ -271,6 +284,51 @@ export const data: PortfolioData = {
         "Improved platform architecture and automated key product workflows.",
       ],
     },
+    {
+      company: "Aziin Engineering Solution",
+      logo: "",
+      role: "Full Stack Developer (Intern)",
+      startDate: "2024",
+      endDate: "2024",
+      location: "Tunisia",
+      description:
+        "Developed an e-learning platform with AI chatbot support, MERN backend features, authentication, and real-time WebSocket interactions.",
+      achievements: [
+        "Built dynamic course/content workflows and authentication modules.",
+        "Integrated AI chatbot assistance into the learning experience.",
+        "Improved platform responsiveness and backend performance for real-time usage.",
+      ],
+    },
+    {
+      company: "SAC Marquage",
+      logo: "",
+      role: "Mobile Developer (Intern)",
+      startDate: "Sep 2024",
+      endDate: "Oct 2024",
+      location: "Tunisia",
+      description:
+        "Built a React Native RFID mobile application connected to IoT devices and Django REST APIs for tag management and synchronization.",
+      achievements: [
+        "Developed mobile RFID workflows with IoT device communication.",
+        "Created Django APIs for tag management and device synchronization.",
+        "Implemented reliable field-ready data handling for device operations.",
+      ],
+    },
+    {
+      company: "Proged",
+      logo: "",
+      role: "Full Stack Web Developer (Intern)",
+      startDate: "Jul 2022",
+      endDate: "Aug 2022",
+      location: "Tunisia",
+      description:
+        "Developed e-commerce features using .NET, React, SQL Server, and MongoDB, covering product catalog, payments, and order workflows.",
+      achievements: [
+        "Implemented product catalog and order management workflows.",
+        "Worked across .NET, React, SQL Server, and MongoDB.",
+        "Contributed to deployment and maintenance of web application modules.",
+      ],
+    },
   ],
 
   testimonials: [
@@ -325,9 +383,10 @@ export const data: PortfolioData = {
   ],
 
   social: {
+    upwork: "https://www.upwork.com/freelancers/~01adc11dd1f62fd715",
     linkedin: "https://www.linkedin.com/in/aymen-khaled-652724236/?skipRedirect=true",
     whatsapp: "https://wa.me/21626286045",
-    calendly: "https://calendly.com/aymenkhaled/30min",
+    calendly: "https://calendly.com/khaledaymen850",
     github: "https://github.com/aymenkhaled",
     email: "mailto:khaledaymen850@gmail.com",
   },

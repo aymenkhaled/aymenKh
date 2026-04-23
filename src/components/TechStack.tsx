@@ -4,41 +4,18 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { data } from "@/data/portfolio";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-
-const TECH_ICONS: Record<string, string> = {
-  "React":          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-  "Next.js":        "https://cdn.simpleicons.org/nextdotjs/FFFFFF",
-  "React Native":   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-  "Redux":          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
-  "Tailwind CSS":   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-  "TypeScript":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-  "Python":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-  "JavaScript":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-  "Node.js":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-  "Express.js":     "https://cdn.simpleicons.org/express/FFFFFF",
-  "FastAPI":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
-  "Django":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-original.svg",
-  "LangChain":      "https://cdn.simpleicons.org/langchain/1C3C3C",
-  "OpenAI":         "https://cdn.simpleicons.org/openai/FFFFFF",
-  "Groq":           "https://cdn.simpleicons.org/groq/F5504E",
-  "PostgreSQL":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
-  "MongoDB":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-  "Docker":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-  "Git":            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-  "AWS":            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-};
+import { getTechIconUrl } from "@/lib/techIcons";
 
 function TechIcon({ name, category }: { name: string; category: string }) {
   const [failed, setFailed] = useState(false);
   const color = CAT_COLORS[category] ?? "#10b981";
-  const iconUrl = TECH_ICONS[name];
+  const iconUrl = getTechIconUrl(name);
 
   if (!iconUrl || failed) {
     return (
-      <span
-        className="w-4 h-4 rounded-full shrink-0"
-        style={{ background: color }}
-      />
+      <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-md px-1 text-[9px] font-black text-white" style={{ background: color }}>
+        {name.slice(0, 2).toUpperCase()}
+      </span>
     );
   }
 
@@ -47,9 +24,9 @@ function TechIcon({ name, category }: { name: string; category: string }) {
     <img
       src={iconUrl}
       alt={name}
-      width={16}
-      height={16}
-      className="w-4 h-4 shrink-0 object-contain"
+      width={18}
+      height={18}
+      className="w-[18px] h-[18px] shrink-0 object-contain"
       onError={() => setFailed(true)}
     />
   );
@@ -59,6 +36,7 @@ const CAT_COLORS: Record<string, string> = {
   frontend: "#3b82f6",
   backend:  "#8b5cf6",
   language: "#f59e0b",
+  mobile:   "#22c55e",
   styling:  "#ec4899",
   database: "#10b981",
   orm:      "#06b6d4",

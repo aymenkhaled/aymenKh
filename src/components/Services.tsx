@@ -117,9 +117,9 @@ export function Services() {
                 {/* Stats row */}
                 <div className="flex flex-wrap gap-6 mt-6">
                   {[
-                    { val: "60%", lbl: "Support queries reduced" },
-                    { val: "1000+", lbl: "Hours saved for clients" },
-                    { val: "85%", lbl: "Bot accuracy achieved" },
+                    { val: "65+", lbl: "AI tools integrated" },
+                    { val: "40+", lbl: "Platforms scraped" },
+                    { val: "10+", lbl: "AI assistants built" },
                   ].map(({ val, lbl }) => (
                     <div key={lbl}>
                       <p

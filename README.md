@@ -1,37 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Aymen Khaled - Freelancer Portfolio
 
-## Getting Started
+Client-focused portfolio for freelance AI SaaS, automation, and full-stack projects.
 
-First, run the development server:
+## Local setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Profile source
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Primary content lives in:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+src/data/portfolio.ts
+```
 
-## Learn More
+Use `public/pic.png` as the official profile image.
 
-To learn more about Next.js, take a look at the following resources:
+## Calendly
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The booking section embeds:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+https://calendly.com/khaledaymen850
+```
 
-## Deploy on Vercel
+The app accepts both the base scheduling URL and future event URLs such as `/30min`. If an event URL gives 404, create and publish that event in Calendly, then copy the exact share link.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Vercel Analytics
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# aymen-khaled" 
+The app includes `@vercel/analytics/next`. Enable Web Analytics in the Vercel dashboard for this project, then redeploy.
+
+## Quality checks
+
+Before publishing, verify there are no placeholder testimonials, broken images, old stats, or missing contact links.

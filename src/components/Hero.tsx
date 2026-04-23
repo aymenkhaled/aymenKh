@@ -7,7 +7,7 @@ import { Calendar, ArrowRight } from "lucide-react";
 import { data } from "@/data/portfolio";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
-const WORDS = ["SaaS platforms", "AI integrations", "mobile apps", "full-stack systems"];
+const WORDS = ["SaaS platforms", "AI integrations", "automation systems", "full-stack apps"];
 const ease = [0.4, 0, 0.2, 1] as const;
 
 export function Hero() {
@@ -111,9 +111,9 @@ export function Hero() {
           className="font-black leading-[1.1] tracking-tighter mb-2"
           style={{ fontSize: "clamp(2.2rem, 6.2vw, 4.1rem)", letterSpacing: "-0.048em", color: "var(--text)" }}
         >
-          <span style={{ color: "var(--accent)" }}>Full Stack Web</span>
+          <span style={{ color: "var(--accent)" }}>AI SaaS</span>
           <br />
-          <span style={{ color: "var(--text)" }}>& Mobile Developer</span>
+          <span style={{ color: "var(--text)" }}>& Full-Stack Developer</span>
         </motion.h1>
 
         <motion.p
@@ -147,7 +147,7 @@ export function Hero() {
               </motion.span>
             </AnimatePresence>
           </span>
-          {" "}that solve real business problems.
+          {" "}for teams that need production-ready delivery.
         </motion.p>
 
         <motion.p

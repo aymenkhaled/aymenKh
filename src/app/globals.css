@@ -1,15 +1,15 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
-/* ── class-based dark mode for next-themes ── */
+/* -- class-based dark mode for next-themes -- */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: var(--font-inter);
 }
 
-/* ─────────────────────────────────────────────
-   DESIGN TOKENS — LIGHT THEME (default)
-───────────────────────────────────────────── */
+/* ---------------------------------------------
+   DESIGN TOKENS - LIGHT THEME (default)
+--------------------------------------------- */
 :root {
   --accent:          #10b981;
   --accent-dim:      rgba(16,185,129,0.1);
@@ -29,9 +29,9 @@
   --radius:          16px;
 }
 
-/* ─────────────────────────────────────────────
+/* ---------------------------------------------
    DARK THEME
-───────────────────────────────────────────── */
+--------------------------------------------- */
 .dark {
   --bg:              #0a0a0f;
   --bg2:             #0f0f18;
@@ -47,9 +47,9 @@
   --shadow-lg:       0 20px 60px rgba(0,0,0,0.5);
 }
 
-/* ─────────────────────────────────────────────
+/* ---------------------------------------------
    BASE RESET
-───────────────────────────────────────────── */
+--------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -72,9 +72,9 @@ body {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
-/* ─────────────────────────────────────────────
+/* ---------------------------------------------
    KEYFRAMES
-───────────────────────────────────────────── */
+--------------------------------------------- */
 @keyframes marquee-left {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -108,9 +108,9 @@ body {
   50%       { transform: translateY(8px) translateX(-50%); opacity: 0.5; }
 }
 
-/* ─────────────────────────────────────────────
+/* ---------------------------------------------
    UTILITY CLASSES
-───────────────────────────────────────────── */
+--------------------------------------------- */
 
 /* Availability badge */
 .avail-badge {
@@ -290,3 +290,4 @@ body {
 /* Float animations */
 .float-a { animation: float-a 4s ease-in-out infinite; }
 .float-b { animation: float-b 3.5s ease-in-out infinite; }
+

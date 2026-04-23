@@ -12,21 +12,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aymen Khaled - Full Stack Web and Mobile Developer",
+  title: "Aymen Khaled - AI SaaS & Full-Stack Developer",
   description:
-    "Full Stack Web and Mobile Developer specialized in SaaS and AI integrations. 15+ delivered projects with production experience in React, Node.js, and Python.",
+    "AI SaaS and full-stack developer building production SaaS platforms, AI integrations, automation systems, and web/mobile apps with React, Node.js, Python, OpenAI, and Groq.",
   keywords: [
     "Full Stack Developer",
     "SaaS Development",
+    "AI SaaS Developer",
     "AI Integration",
+    "OpenAI Developer",
+    "Automation Developer",
     "React Developer",
     "Node.js Developer",
     "Next.js",
     "Freelancer",
   ],
   openGraph: {
-    title: "Aymen Khaled - Full Stack Web and Mobile Developer",
-    description: "Building production SaaS platforms with AI integrations and real-time systems.",
+    title: "Aymen Khaled - AI SaaS & Full-Stack Developer",
+    description: "Building production SaaS platforms, AI integrations, automation systems, and real-time full-stack products.",
     type: "website",
   },
 };

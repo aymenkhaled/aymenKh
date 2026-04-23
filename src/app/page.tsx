@@ -18,11 +18,11 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <Projects />
-        <Experience />
-        <Process />
-        <TechStack />
         <Testimonials />
+        <Projects />
+        <Process />
+        <Experience />
+        <TechStack />
         <Guarantee />
         <Booking />
       </main>
