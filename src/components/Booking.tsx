@@ -2,24 +2,27 @@
 
 import { motion } from "framer-motion";
 import {
-  Briefcase, Link2, MessageCircle, GitBranch, Mail, CalendarClock,
+  Link2, MessageCircle, GitBranch, Mail, CalendarClock,
 } from "lucide-react";
 import { data } from "@/data/portfolio";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const SOCIAL_LINKS = [
-  { key: "upwork",   label: "Upwork",    Icon: Briefcase },
-  { key: "linkedin", label: "LinkedIn",  Icon: Link2 },
-  { key: "whatsapp", label: "WhatsApp",  Icon: MessageCircle },
-  { key: "github",   label: "GitHub",    Icon: GitBranch },
-  { key: "email",    label: "Email",     Icon: Mail },
+  { key: "linkedin", label: "LinkedIn", Icon: Link2 },
+  { key: "whatsapp", label: "WhatsApp", Icon: MessageCircle },
+  { key: "github", label: "GitHub", Icon: GitBranch },
+  { key: "email", label: "Email", Icon: Mail },
 ] as const;
+
+function isValidCalendlyUrl(url?: string) {
+  if (!url) return false;
+  return /^https:\/\/calendly\.com\/[A-Za-z0-9._-]+\/[A-Za-z0-9._-]+\/?$/i.test(url);
+}
 
 export function Booking() {
   const { social } = data;
-  const hasCalendly =
-    social.calendly && !social.calendly.endsWith("calendly.com");
+  const hasCalendly = isValidCalendlyUrl(social.calendly);
 
   return (
     <section
@@ -29,7 +32,6 @@ export function Booking() {
       aria-label="Book a call"
     >
       <div className="max-w-3xl mx-auto px-6">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,12 +42,11 @@ export function Booking() {
           <SectionHeader
             label="Let's Build Together"
             title={`Ready to start\nyour project?`}
-            subtitle="Book a free 30-minute strategy call. No sales pitch — just real value, clarity, and a clear path forward."
+            subtitle="Book a free 30-minute strategy call. No sales pitch, just useful direction and a clear next step."
             center
           />
         </motion.div>
 
-        {/* Calendly embed or placeholder */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,49 +58,27 @@ export function Booking() {
             borderColor: "var(--border)",
           }}
         >
-          {hasCalendly ? (
-            <iframe
-              src={social.calendly}
-              width="100%"
-              height="630px"
-              frameBorder="0"
-              title="Book a call"
-              className="block"
-            />
-          ) : (
-            /* Placeholder when no real Calendly URL is set */
-            <div className="flex flex-col items-center justify-center gap-4 py-16 px-6 text-center">
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center border"
-                style={{
-                  background: "var(--accent-dim)",
-                  borderColor: "var(--border-accent)",
-                  color: "var(--accent)",
-                }}
-              >
-                <CalendarClock size={30} />
-              </div>
-              <div>
-                <p className="font-semibold mb-1" style={{ color: "var(--text)" }}>
-                  Calendly Embed
-                </p>
-                <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-                  Set your{" "}
-                  <code
-                    className="font-mono text-xs px-1.5 py-0.5 rounded"
-                    style={{ background: "var(--accent-dim)", color: "var(--accent)" }}
-                  >
-                    social.calendly
-                  </code>{" "}
-                  URL in{" "}
-                  <code
-                    className="font-mono text-xs"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    /src/data/portfolio.ts
-                  </code>
-                </p>
-              </div>
+          <div className="flex flex-col items-center justify-center gap-4 py-16 px-6 text-center">
+            <div
+              className="w-16 h-16 rounded-2xl flex items-center justify-center border"
+              style={{
+                background: "var(--accent-dim)",
+                borderColor: "var(--border-accent)",
+                color: "var(--accent)",
+              }}
+            >
+              <CalendarClock size={30} />
+            </div>
+            <div>
+              <p className="font-semibold mb-1" style={{ color: "var(--text)" }}>
+                Book a Free Strategy Call
+              </p>
+              <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+                30-minute call focused on your product goals and a practical implementation plan.
+              </p>
+            </div>
+
+            {hasCalendly ? (
               <MagneticButton>
                 <a
                   href={social.calendly}
@@ -111,11 +90,14 @@ export function Booking() {
                   Schedule a Call
                 </a>
               </MagneticButton>
-            </div>
-          )}
+            ) : (
+              <p className="text-sm" style={{ color: "var(--text-dim)" }}>
+                Calendar is temporarily unavailable. Please contact me directly via WhatsApp or email below.
+              </p>
+            )}
+          </div>
         </motion.div>
 
-        {/* Divider */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -130,7 +112,6 @@ export function Booking() {
           <div className="flex-1 h-px" style={{ background: "var(--border)" }} />
         </motion.div>
 
-        {/* Social links */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

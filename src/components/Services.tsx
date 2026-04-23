@@ -35,7 +35,7 @@ export function Services() {
           <SectionHeader
             label="What I Do"
             title="Services"
-            subtitle="Production-grade AI systems, automation pipelines, and full-stack applications — built to deliver measurable results."
+            subtitle="Production-grade SaaS platforms, AI integrations, and full-stack applications — built to deliver measurable results."
           />
         </motion.div>
 

@@ -9,31 +9,29 @@ import type { CaseStudy } from "@/data/caseStudies";
 import type { Project } from "@/types";
 
 const TECH_SLUG: Record<string, string> = {
-  "Next.js":          "nextdotjs",
-  "React":            "react",
-  "Node.js":          "nodedotjs",
-  "Python":           "python",
-  "TypeScript":       "typescript",
-  "JavaScript":       "javascript",
-  "Express.js":       "express",
-  "Spring Boot":      "springboot",
-  "PostgreSQL":       "postgresql",
-  "MongoDB":          "mongodb",
-  "Supabase":         "supabase",
-  "Prisma":           "prisma",
-  "Docker":           "docker",
-  "Vercel":           "vercel",
-  "GitHub Actions":   "githubactions",
-  "GitHub API":       "github",
-  "Tailwind CSS":     "tailwindcss",
-  "OpenAI API":       "openai",
-  "Gemini API":       "googlegemini",
-  "n8n":              "n8n",
-  "Twilio":           "twilio",
-  "Webflow API":      "webflow",
-  "LinkedIn API":     "linkedin",
-  "Chrome Extension": "googlechrome",
-  "LangChain":        "langchain",
+  "React":          "react",
+  "Next.js":        "nextdotjs",
+  "Node.js":        "nodedotjs",
+  "Python":         "python",
+  "TypeScript":     "typescript",
+  "JavaScript":     "javascript",
+  "Express.js":     "express",
+  "PostgreSQL":     "postgresql",
+  "MongoDB":        "mongodb",
+  "Docker":         "docker",
+  "Tailwind CSS":   "tailwindcss",
+  "OpenAI":         "openai",
+  "Stripe":         "stripe",
+  "Puppeteer":      "puppeteer",
+  "Cheerio":        "cheerio",
+  "Lighthouse":     "googlelighthouse",
+  "LangChain":      "langchain",
+  "Redux":          "redux",
+  "FastAPI":        "fastapi",
+  "Django":         "django",
+  "Groq":           "groq",
+  "AWS":            "amazonaws",
+  "Git":            "git",
 };
 
 function TechPill({ tag }: { tag: string }) {
@@ -97,7 +95,7 @@ export function CaseStudyTemplate({ study, project }: Props) {
             All Projects
           </Link>
           <Link href="/" className="text-sm font-black" style={{ color: "var(--text)" }}>
-            Ahmed<span style={{ color: "var(--accent)" }}>.</span>
+            Aymen<span style={{ color: "var(--accent)" }}>.</span>
           </Link>
         </div>
       </header>

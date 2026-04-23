@@ -12,21 +12,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ahmed Ben Yahia — AI & Automation Engineer",
+  title: "Aymen Khaled - Full Stack Web and Mobile Developer",
   description:
-    "Top Rated freelancer building production-grade RAG systems, autonomous AI agents, and scalable n8n workflows. 15+ projects, 10+ happy clients.",
+    "Full Stack Web and Mobile Developer specialized in SaaS and AI integrations. 15+ delivered projects with production experience in React, Node.js, and Python.",
   keywords: [
-    "AI Engineer",
-    "RAG Systems",
-    "n8n Automation",
-    "LangChain",
     "Full Stack Developer",
+    "SaaS Development",
+    "AI Integration",
+    "React Developer",
+    "Node.js Developer",
     "Next.js",
     "Freelancer",
   ],
   openGraph: {
-    title: "Ahmed Ben Yahia — AI & Automation Engineer",
-    description: "Production-grade RAG systems, AI agents, and workflow automation.",
+    title: "Aymen Khaled - Full Stack Web and Mobile Developer",
+    description: "Building production SaaS platforms with AI integrations and real-time systems.",
     type: "website",
   },
 };

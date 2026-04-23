@@ -3,38 +3,35 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
-import { ExternalLink, GitBranch, ArrowRight } from "lucide-react";
+import { ExternalLink, GitBranch, ArrowRight, Briefcase, BarChart3, Eye } from "lucide-react";
 import { data } from "@/data/portfolio";
-import { toSlug } from "@/lib/slug";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-// Map tag name → simple-icons slug (used with Iconify API)
 const TECH_SLUG: Record<string, string> = {
-  "Next.js":        "nextdotjs",
-  "React":          "react",
-  "Node.js":        "nodedotjs",
-  "Python":         "python",
-  "TypeScript":     "typescript",
-  "JavaScript":     "javascript",
-  "Express.js":     "express",
-  "Spring Boot":    "springboot",
-  "PostgreSQL":     "postgresql",
-  "MongoDB":        "mongodb",
-  "Supabase":       "supabase",
-  "Prisma":         "prisma",
-  "Docker":         "docker",
-  "Vercel":         "vercel",
-  "GitHub Actions": "githubactions",
-  "GitHub API":     "github",
-  "Tailwind CSS":   "tailwindcss",
-  "OpenAI API":     "openai",
-  "Gemini API":     "googlegemini",
-  "n8n":            "n8n",
-  "Twilio":         "twilio",
-  "Webflow API":    "webflow",
-  "LinkedIn API":   "linkedin",
-  "Chrome Extension":"googlechrome",
-  "LangChain":      "langchain",
+  React: "react",
+  "Next.js": "nextdotjs",
+  "Node.js": "nodedotjs",
+  Python: "python",
+  TypeScript: "typescript",
+  JavaScript: "javascript",
+  "Express.js": "express",
+  PostgreSQL: "postgresql",
+  MongoDB: "mongodb",
+  Docker: "docker",
+  "Tailwind CSS": "tailwindcss",
+  OpenAI: "openai",
+  WebSocket: "websocket",
+  Stripe: "stripe",
+  Puppeteer: "puppeteer",
+  Cheerio: "cheerio",
+  Lighthouse: "googlelighthouse",
+  LangChain: "langchain",
+  Redux: "redux",
+  FastAPI: "fastapi",
+  Django: "django",
+  Groq: "groq",
+  AWS: "amazonaws",
+  Git: "git",
 };
 
 function TechIcon({ tag }: { tag: string }) {
@@ -55,11 +52,12 @@ function TechIcon({ tag }: { tag: string }) {
 }
 
 const CAT_GRADIENT: Record<string, string> = {
-  SaaS:        "from-emerald-400/20 via-teal-400/10 to-blue-400/10",
-  "E-commerce":"from-purple-400/20 via-pink-400/10 to-rose-400/10",
-  "Web App":   "from-blue-400/20 via-cyan-400/10 to-sky-400/10",
-  API:         "from-amber-400/20 via-orange-400/10 to-red-400/10",
-  Mobile:      "from-lime-400/20 via-green-400/10 to-teal-400/10",
+  SaaS: "from-emerald-400/20 via-teal-400/10 to-blue-400/10",
+  "E-commerce": "from-purple-400/20 via-pink-400/10 to-rose-400/10",
+  "Web App": "from-blue-400/20 via-cyan-400/10 to-sky-400/10",
+  "AI Tool": "from-cyan-400/20 via-blue-400/10 to-indigo-400/10",
+  Automation: "from-amber-400/20 via-orange-400/10 to-red-400/10",
+  Education: "from-lime-400/20 via-green-400/10 to-teal-400/10",
 };
 
 type Project = (typeof data.projects)[0];
@@ -82,7 +80,6 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         boxShadow: "var(--shadow)",
       }}
     >
-      {/* Thumbnail */}
       <div className={`relative aspect-video bg-gradient-to-br ${grad} overflow-hidden`}>
         {project.thumbnail && !imgErr ? (
           <Image
@@ -93,7 +90,6 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
             onError={() => setImgErr(true)}
           />
         ) : (
-          /* Placeholder */
           <div className="absolute inset-0 flex items-center justify-center">
             <span
               className="text-7xl font-black opacity-10 select-none"
@@ -101,7 +97,6 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
             >
               {project.title[0]}
             </span>
-            {/* Grid decoration */}
             <div
               className="absolute inset-0 opacity-30"
               style={{
@@ -113,7 +108,6 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
           </div>
         )}
 
-        {/* Hover overlay */}
         <div
           className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
@@ -148,7 +142,6 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
           </div>
         </div>
 
-        {/* Category pill */}
         <div className="absolute top-3 right-3">
           <span
             className="text-xs font-bold px-2.5 py-1 rounded-full"
@@ -159,7 +152,6 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         </div>
       </div>
 
-      {/* Card body */}
       <div className="p-5 flex flex-col flex-1">
         <h3
           className="text-base font-bold mb-1.5 leading-tight"
@@ -171,7 +163,6 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
           {project.description}
         </p>
 
-        {/* Tags */}
         <div className="flex flex-wrap gap-1.5">
           {project.tags.map((tag) => (
             <span
@@ -189,18 +180,53 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
           ))}
         </div>
 
-        {/* Case Study link — always pinned to bottom */}
+        <div className="mt-4 space-y-2 text-xs" style={{ color: "var(--text-dim)" }}>
+          <p className="inline-flex items-center gap-1.5">
+            <Briefcase size={12} />
+            <span>{project.role}</span>
+          </p>
+          <p className="inline-flex items-center gap-1.5">
+            <BarChart3 size={12} />
+            <span>{project.impact}</span>
+          </p>
+          <p className="inline-flex items-center gap-1.5">
+            <Eye size={12} />
+            <span>{project.visibility}</span>
+          </p>
+        </div>
+
         <div
           className="mt-auto pt-4 border-t"
           style={{ marginTop: "auto", paddingTop: "1rem", borderTop: "1px solid var(--border)" }}
         >
-          <a
-            href={`/projects/${toSlug(project.title)}`}
-            className="inline-flex items-center gap-1.5 text-xs font-bold transition-opacity hover:opacity-70"
-            style={{ color: "var(--accent)" }}
-          >
-            View Case Study <ArrowRight size={11} />
-          </a>
+          {project.liveUrl ? (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-bold transition-opacity hover:opacity-70"
+              style={{ color: "var(--accent)" }}
+            >
+              View Live Project <ArrowRight size={11} />
+            </a>
+          ) : project.githubUrl ? (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-bold transition-opacity hover:opacity-70"
+              style={{ color: "var(--accent)" }}
+            >
+              View GitHub <ArrowRight size={11} />
+            </a>
+          ) : (
+            <span
+              className="inline-flex items-center gap-1.5 text-xs font-bold"
+              style={{ color: "var(--text-dim)" }}
+            >
+              Private client project
+            </span>
+          )}
         </div>
       </div>
     </motion.article>
@@ -231,11 +257,10 @@ export function Projects() {
           <SectionHeader
             label="Portfolio"
             title="Featured Projects"
-            subtitle="A curated selection of recent work — each crafted with precision and a focus on real business outcomes."
+            subtitle="A curated selection of recent work, each focused on solving business problems with measurable outcomes."
           />
         </motion.div>
 
-        {/* Filter bar */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -267,7 +292,6 @@ export function Projects() {
           })}
         </motion.div>
 
-        {/* Grid */}
         <LayoutGroup>
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <AnimatePresence mode="popLayout">

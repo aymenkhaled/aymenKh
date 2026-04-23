@@ -6,27 +6,26 @@ import { data } from "@/data/portfolio";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const TECH_ICONS: Record<string, string> = {
-  "Next.js":        "https://cdn.simpleicons.org/nextdotjs/FFFFFF",
   "React":          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+  "Next.js":        "https://cdn.simpleicons.org/nextdotjs/FFFFFF",
+  "React Native":   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+  "Redux":          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
   "Tailwind CSS":   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
   "TypeScript":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
   "Python":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
   "JavaScript":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
   "Node.js":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
   "Express.js":     "https://cdn.simpleicons.org/express/FFFFFF",
-  "Nest.js":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
-  "Spring Boot":    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
-  "n8n":            "https://cdn.simpleicons.org/n8n/EA4B71",
-  "Zapier":         "https://cdn.simpleicons.org/zapier/FF4A00",
+  "FastAPI":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+  "Django":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-original.svg",
   "LangChain":      "https://cdn.simpleicons.org/langchain/1C3C3C",
   "OpenAI":         "https://cdn.simpleicons.org/openai/FFFFFF",
-  "ElevenLabs":     "https://cdn.simpleicons.org/elevenlabs/FFFFFF",
+  "Groq":           "https://cdn.simpleicons.org/groq/F5504E",
   "PostgreSQL":     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
   "MongoDB":        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-  "Supabase":       "https://cdn.simpleicons.org/supabase/3ECF8E",
   "Docker":         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-  "Vercel":         "https://cdn.simpleicons.org/vercel/FFFFFF",
-  "GitHub Actions": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
+  "Git":            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+  "AWS":            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
 };
 
 function TechIcon({ name, category }: { name: string; category: string }) {

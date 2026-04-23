@@ -49,7 +49,7 @@ export interface GuaranteeItem {
 }
 
 export interface Social {
-  upwork: string;
+  upwork?: string;
   linkedin: string;
   whatsapp: string;
   calendly: string;
@@ -60,6 +60,9 @@ export interface Social {
 export interface Project {
   title: string;
   description: string;
+  role: string;
+  impact: string;
+  visibility: "Public" | "Private Client";
   thumbnail: string;
   tags: string[];
   category: string;

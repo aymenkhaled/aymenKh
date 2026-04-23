@@ -7,7 +7,7 @@ import { Calendar, ArrowRight } from "lucide-react";
 import { data } from "@/data/portfolio";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
-const WORDS = ["AI systems", "automations", "RAG pipelines", "AI agents"];
+const WORDS = ["SaaS platforms", "AI integrations", "mobile apps", "full-stack systems"];
 const ease = [0.4, 0, 0.2, 1] as const;
 
 export function Hero() {
@@ -32,10 +32,8 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ background: "var(--bg)" }}
     >
-      {/* Grid */}
       <div className="hero-grid" aria-hidden="true" />
 
-      {/* Center glow */}
       <div
         className="pointer-events-none absolute rounded-full blur-[200px]"
         style={{
@@ -49,7 +47,6 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      {/* Top lamp line */}
       <div className="pointer-events-none absolute top-0 inset-x-0 flex flex-col items-center" aria-hidden="true">
         <div
           className="h-px w-60"
@@ -61,10 +58,7 @@ export function Hero() {
         />
       </div>
 
-      {/* ── CONTENT ── */}
       <div className="relative z-10 w-full max-w-2xl mx-auto px-6 pt-28 pb-20 flex flex-col items-center text-center">
-
-        {/* Avatar */}
         <motion.div
           initial={{ opacity: 0, scale: 0.75 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -98,7 +92,6 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Availability */}
         <motion.div
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
@@ -111,21 +104,18 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* ── HEADLINE ── */}
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease, delay: 0.18 }}
           className="font-black leading-[1.1] tracking-tighter mb-2"
-          style={{ fontSize: "clamp(2.4rem, 6.5vw, 4.5rem)", letterSpacing: "-0.048em", color: "var(--text)" }}
+          style={{ fontSize: "clamp(2.2rem, 6.2vw, 4.1rem)", letterSpacing: "-0.048em", color: "var(--text)" }}
         >
-          <span style={{ color: "var(--accent)" }}>Full Stack</span>{" "}&amp;{" "}
-          <span style={{ color: "var(--text)" }}>Automation</span>
+          <span style={{ color: "var(--accent)" }}>Full Stack Web</span>
           <br />
-          <span style={{ color: "var(--text)" }}>Engineer</span>
+          <span style={{ color: "var(--text)" }}>& Mobile Developer</span>
         </motion.h1>
 
-        {/* Animated sub-line */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -157,10 +147,9 @@ export function Hero() {
               </motion.span>
             </AnimatePresence>
           </span>
-          {" "}that actually work.
+          {" "}that solve real business problems.
         </motion.p>
 
-        {/* Bio */}
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -171,14 +160,13 @@ export function Hero() {
           {data.bio}
         </motion.p>
 
-        {/* Skill chips */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease, delay: 0.44 }}
           className="flex flex-wrap justify-center gap-2 mb-8"
         >
-          {["Next.js", "Node.js", "Python", "PostgreSQL", "n8n", "LangChain", "OpenAI API"].map((skill) => (
+          {["React", "Next.js", "Node.js", "Python", "PostgreSQL", "OpenAI", "TypeScript"].map((skill) => (
             <span
               key={skill}
               className="px-3 py-1 rounded-full text-xs font-semibold border"
@@ -189,7 +177,6 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* CTAs — plain, no magnetic wrapper */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -206,7 +193,6 @@ export function Hero() {
           </a>
         </motion.div>
 
-        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
