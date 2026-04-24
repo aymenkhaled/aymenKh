@@ -29,8 +29,12 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Aymen Khaled - AI SaaS & Full-Stack Developer",
-    description: "Building production SaaS platforms, AI integrations, automation systems, and real-time full-stack products.",
+    description:
+      "Building production SaaS platforms, AI integrations, automation systems, and real-time full-stack products.",
     type: "website",
+  },
+  other: {
+    "autoseo-site-verification": "Yt7dMWqDUrRT7smbYK3Wwzf0BxyJoKXE",
   },
 };
 
