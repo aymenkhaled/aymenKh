@@ -1,0 +1,42 @@
+﻿<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#07111F"/>
+  <defs>
+    <linearGradient id="bg" x1="140" y1="60" x2="1420" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B3B66"/>
+      <stop offset="0.55" stop-color="#0D172B"/>
+      <stop offset="1" stop-color="#0B6E8A"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 230) rotate(133) scale(520 520)">
+      <stop stop-color="#63D3FF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#63D3FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 730) rotate(41) scale(460 460)">
+      <stop stop-color="#0B6E8A" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#0B6E8A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="36" y="36" width="1528" height="828" rx="36" fill="url(#bg)" stroke="rgba(255,255,255,0.16)"/>
+  <rect x="84" y="86" width="1432" height="728" rx="28" fill="#091427" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="1180" cy="230" r="520" fill="url(#glowA)"/>
+  <circle cx="280" cy="730" r="460" fill="url(#glowB)"/>
+  <path d="M1010 176C1110 206 1182 266 1232 350C1279 428 1294 515 1275 611C1250 742 1135 802 987 786M977 190C884 243 826 315 802 412C778 515 800 629 886 721" fill="none" stroke="#63D3FF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  <rect x="118" y="132" width="180" height="42" rx="21" fill="rgba(255,255,255,0.08)"/>
+  <text x="150" y="160" fill="#D7E4FF" font-size="22" font-family="Arial, Helvetica, sans-serif" letter-spacing="5">PRIVATE BUILD</text>
+  <text x="118" y="350" fill="#FFFFFF" font-size="74" font-weight="700" font-family="Arial, Helvetica, sans-serif">RxCare / Deep Analyzer Suite</text>
+  <text x="118" y="418" fill="#A9BCD9" font-size="30" font-family="Arial, Helvetica, sans-serif">Healthcare mobile workflows, pharmacy tools, and AI-assisted care.</text>
+  <g opacity="0.9">
+    <rect x="118" y="520" width="280" height="118" rx="26" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="150" y="572" fill="#E7F0FF" font-size="26" font-family="Arial, Helvetica, sans-serif">Production-ready UX</text>
+    <text x="150" y="612" fill="#A9BCD9" font-size="22" font-family="Arial, Helvetica, sans-serif">Structured workflows and polished delivery</text>
+  </g>
+  <g opacity="0.92">
+    <rect x="438" y="520" width="280" height="118" rx="26" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="470" y="572" fill="#E7F0FF" font-size="26" font-family="Arial, Helvetica, sans-serif">Modern stack</text>
+    <text x="470" y="612" fill="#A9BCD9" font-size="22" font-family="Arial, Helvetica, sans-serif">AI, mobile, API, and data workflows</text>
+  </g>
+  <g opacity="0.94">
+    <rect x="758" y="520" width="280" height="118" rx="26" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="790" y="572" fill="#E7F0FF" font-size="26" font-family="Arial, Helvetica, sans-serif">Client delivery</text>
+    <text x="790" y="612" fill="#A9BCD9" font-size="22" font-family="Arial, Helvetica, sans-serif">Built for real-world use, not just demos</text>
+  </g>
+</svg>

@@ -54,6 +54,42 @@ export const caseStudies: Record<string, CaseStudy> = {
     "Enabled faster and more reliable follow-ups with structured outputs for sales teams."
   ),
 
+  "rxcare-deep-analyzer-suite": cs(
+    "Medication management, care communication, refill planning, and health tracking were fragmented across separate tools and manual processes.",
+    "Built a healthcare mobile app that combined pharmacy workflows, prescription management, telehealth appointments, secure messaging, lab and vitals tracking, family coordination, and an AI pharmacist assistant.",
+    [
+      "Prescription and refill tracking",
+      "Drug interaction checks and savings support",
+      "Telehealth and secure provider messaging",
+      "AI pharmacist chat assistant",
+    ],
+    "Created one mobile healthcare workflow that improved medication adherence, care visibility, and day-to-day patient coordination."
+  ),
+
+  "tunisia-auto-connect-autotn": cs(
+    "Drivers and sellers needed a localized automotive experience that combined diagnostics, marketplace activity, and multilingual support in one place.",
+    "Built a trilingual automotive mobile platform with AI diagnostics, VIN decoding, vehicle price estimation, listing management, seller profiles, comparison tools, image uploads, and WhatsApp seller contact.",
+    [
+      "Arabic, French, and English support",
+      "RTL-ready mobile UX",
+      "AI diagnostics and VIN decoding",
+      "Car, moto, and parts marketplace workflows",
+    ],
+    "Delivered a Tunisia-focused product that merged service, valuation, and marketplace flows into one mobile app."
+  ),
+
+  "integrity-solve-aml-ctf-compliance-portal": cs(
+    "Regulated businesses needed a clearer way to manage onboarding, due diligence, risk routing, verification results, and audit evidence.",
+    "Built a compliance SaaS prototype with wizard-led AML program setup, customer and company onboarding, reviewer decisions, escalation handling, provider normalization, and PDF audit summaries.",
+    [
+      "KYC, KYB, and AML screening flows",
+      "Case management and reviewer routing",
+      "Webhook-aware verification layer",
+      "Evidence packs and audit-ready summaries",
+    ],
+    "Centralized AML and CTF operations into a workflow that made reviews, decisions, and audit preparation significantly easier."
+  ),
+
   "lms-with-ai-integration-and-websocket": cs(
     "Students lacked immediate support and engagement in static learning experiences.",
     "Implemented AI chatbot support and WebSocket-powered live interaction features.",

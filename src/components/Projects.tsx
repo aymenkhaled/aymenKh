@@ -38,6 +38,9 @@ const CAT_GRADIENT: Record<string, string> = {
   "AI Tool": "from-cyan-400/20 via-blue-400/10 to-indigo-400/10",
   Automation: "from-amber-400/20 via-orange-400/10 to-red-400/10",
   Education: "from-lime-400/20 via-green-400/10 to-teal-400/10",
+  Healthcare: "from-sky-400/20 via-cyan-400/10 to-emerald-400/10",
+  Marketplace: "from-orange-400/20 via-amber-400/10 to-yellow-400/10",
+  Compliance: "from-violet-400/20 via-fuchsia-400/10 to-cyan-400/10",
 };
 
 type Project = (typeof data.projects)[0];
