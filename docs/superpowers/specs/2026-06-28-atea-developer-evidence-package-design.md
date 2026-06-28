@@ -16,34 +16,33 @@ The role covers:
 - data, reporting, automated testing, CI/CD, deployment support, and technical documentation;
 - technical integration with the selected LMS under the responsibility of an experienced LMS/Moodle specialist.
 
-## Moodle and full-stack responsibility model
+## Custom LMS and full-stack responsibility model
 
-Moodle is the LMS core, not merely a content-writing tool and not a Node.js application. It supplies mature learning functions such as users, roles, courses, enrolment, activities, quizzes, completion tracking, grades, reports, and administration.
+The primary scenario is the adaptation and industrialisation of Aymen's existing LMS source code. Moodle is retained only as the required acquisition/configuration comparison scenario. The proposal must not claim prior Moodle experience for Aymen.
 
 The division of work is:
 
 1. **Pedagogical experts** define learning objectives, module structure, case studies, exercises, assessment rules, and validated content.
-2. **Moodle/LMS expert** installs and configures Moodle, chooses supported plugins, configures roles and permissions, governs upgrades, and validates the LMS architecture.
-3. **Aymen as full-stack integrator** develops only the custom layer that is genuinely required: branded interfaces, dashboards, integrations, external APIs, automation, AI services, reporting extensions, and deployment pipelines.
-4. **ATEA administrators** use Moodle's administration screens to create and update ordinary courses and content without writing code after training.
+2. **Aymen as full-stack technical lead** audits, adapts and industrialises the existing source code; develops the administration, course, assessment, reporting, integration and deployment layers; and documents the platform.
+3. **ATEA administrators** use the custom administration interface to create and update ordinary courses and content without writing code after training.
+4. **Moodle/LMS expert**, if the acquisition alternative is selected, installs and configures Moodle and assumes all Moodle-specific responsibility.
 
-Coding is required only when configuration is insufficient. Possible coding surfaces include Moodle plugins and themes in PHP/JavaScript, or an external React/TypeScript portal and Node.js integration service using Moodle's supported Web Service APIs. The proposal will not claim that Aymen has prior Moodle development experience.
+Pedagogical content creation is separate from platform coding. The experts create and validate content; Aymen builds the tools that allow them to structure modules, upload resources, configure quizzes, define completion rules and review reports.
 
 ## Recommended architecture
 
-Use a hybrid acquisition-and-customisation scenario:
+Use a custom-LMS-first scenario:
 
-- Moodle LMS on a supported stable or LTS release validated at deployment;
+- audit and adaptation of the existing React/Node LMS source code owned by Aymen;
 - PostgreSQL as the primary database;
 - Nginx and TLS on a controlled VPS/cloud environment;
 - protected object storage for large files when justified;
-- Moodle-native roles, course management, assessments, completion, and reports;
-- custom React/TypeScript interfaces only for justified user journeys;
-- Node.js/NestJS integration services only for external APIs, AI, automation, or reporting functions not suitably implemented in Moodle;
-- supported APIs and plugins instead of modifications to Moodle core;
+- custom roles, course management, assessments, completion, certificates and reports;
+- React/TypeScript learner and administrator interfaces;
+- Node.js API and integration services for business rules, external APIs, AI, automation and reporting;
 - staging and production environments, automated backups, restore tests, audit logging, monitoring, and documented upgrades.
 
-The pure React/Node custom-LMS scenario will remain a comparison option, not the default recommendation. The pure Moodle configuration scenario will remain the lowest-cost comparison option.
+The Moodle acquisition/configuration scenario will be documented as the comparison option required by the TDR, not as Aymen's implementation commitment.
 
 ## Evidence rules
 
@@ -87,7 +86,7 @@ Create the following artifacts while preserving all original source files:
 2. `output/pdf/Dossier_Expert_Technique_Aymen_Khaled_ATEA.pdf` - profile, role, skills, project references, contribution boundaries, and evidence status.
 3. `output/pdf/Annexe_Visuelle_Demonstrateur_LMS_ATEA.pdf` - captioned, privacy-safe screenshots from the actual demo.
 4. `output/docx/Corrections_Proposition_Mehdi_ATEA.docx` - exact ready-to-paste replacements for the submission letter and technical proposal.
-5. `output/pdf/Architecture_Hybride_Moodle_FullStack_ATEA.pdf` - clearly labelled proposed architecture and responsibility map.
+5. `output/pdf/Architecture_LMS_Sur_Mesure_ATEA.pdf` - clearly labelled proposed architecture and responsibility map.
 6. `output/checklists/Pieces_Justificatives_Manquantes_ATEA.md` - missing diplomas, certificates, attestations, and corporate references.
 7. `output/ATEA_Aymen_Khaled_Submission_Pack.zip` - final delivery bundle after visual and textual verification.
 
@@ -97,9 +96,9 @@ The correction document will:
 
 - replace Aymen's title with the approved full-stack integrator title;
 - clarify that Aymen is an additional technical expert, not a mandatory pedagogical expert;
-- replace the pure custom-development recommendation with the hybrid scenario;
-- assign Moodle-core responsibility to a demonstrably experienced Moodle/LMS expert;
-- separate Moodle configuration, pedagogical content production, and custom software development;
+- retain custom development as the primary scenario and describe it as adaptation and industrialisation of an owned existing source base;
+- present Moodle acquisition/configuration as the comparison scenario and assign it only to a demonstrably experienced Moodle/LMS expert;
+- separate pedagogical content production, custom software development and the optional Moodle alternative;
 - remove all placeholders and the "document technique interne" label;
 - replace ambiguous technology choices with a governed architecture and decision criteria;
 - add interoperability, security, backup/restore, acceptance testing, deployment, maintenance, and knowledge-transfer commitments;
