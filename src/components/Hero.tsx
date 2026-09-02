@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight, FileDown } from "lucide-react";
 import { data } from "@/data/portfolio";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
-const WORDS = ["SaaS platforms", "AI integrations", "automation systems", "full-stack apps"];
+const WORDS = ["SaaS products", "web apps", "mobile apps", "Windows desktop apps"];
 const ease = [0.4, 0, 0.2, 1] as const;
 
 export function Hero() {
@@ -111,9 +111,9 @@ export function Hero() {
           className="font-black leading-[1.1] tracking-tighter mb-2"
           style={{ fontSize: "clamp(2.2rem, 6.2vw, 4.1rem)", letterSpacing: "-0.048em", color: "var(--text)" }}
         >
-          <span style={{ color: "var(--accent)" }}>AI SaaS</span>
+          <span style={{ color: "var(--accent)" }}>Full-Stack</span>
           <br />
-          <span style={{ color: "var(--text)" }}>& Full-Stack Developer</span>
+          <span style={{ color: "var(--text)" }}>Developer</span>
         </motion.h1>
 
         <motion.p
@@ -185,11 +185,19 @@ export function Hero() {
         >
           <a href="#booking" className="btn-primary">
             <Calendar size={15} />
-            Book a Free Call
+            Book a Free Consultation
           </a>
           <a href="#projects" className="btn-secondary">
             See My Work
             <ArrowRight size={15} />
+          </a>
+          <a
+            href="/Aymen_Khaled_CV.pdf"
+            download
+            className="btn-secondary"
+          >
+            <FileDown size={15} />
+            Download CV
           </a>
         </motion.div>
 

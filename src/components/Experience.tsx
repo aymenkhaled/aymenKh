@@ -31,7 +31,11 @@ export function Experience() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-10"
+          role="tablist"
+          aria-label="Work experience"
+        >
           {data.experience.map((e, i) => {
             const selected = active === i;
             return (
@@ -45,6 +49,9 @@ export function Experience() {
                   color: selected ? "var(--accent)" : "var(--text-muted)",
                 }}
                 aria-selected={selected}
+                role="tab"
+                id={`experience-tab-${i}`}
+                aria-controls="experience-panel"
               >
                 <span className="block text-sm font-bold leading-tight">{e.company}</span>
                 <span className="block text-xs mt-1" style={{ color: "var(--text-dim)" }}>
@@ -65,6 +72,9 @@ export function Experience() {
         >
           <AnimatePresence mode="wait">
             <motion.div
+              id="experience-panel"
+              role="tabpanel"
+              aria-labelledby={`experience-tab-${active}`}
               key={active}
               initial={{ opacity: 0, x: 18 }}
               animate={{ opacity: 1, x: 0 }}

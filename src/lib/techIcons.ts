@@ -13,7 +13,6 @@ export const TECH_SLUG: Record<string, string> = {
   Django: "django",
   Laravel: "laravel",
   OpenAI: "openai",
-  Groq: "groq",
   LangChain: "langchain",
   WebSocket: "socketdotio",
   Stripe: "stripe",

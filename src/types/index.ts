@@ -33,15 +33,6 @@ export interface StackItem {
   category: string;
 }
 
-export interface Testimonial {
-  name: string;
-  photo: string;
-  project: string;
-  review: string;
-  rating: number;
-  platform: string;
-}
-
 export interface GuaranteeItem {
   title: string;
   description: string;
@@ -93,7 +84,6 @@ export interface PortfolioData {
   services: Service[];
   process: ProcessStep[];
   stack: StackItem[];
-  testimonials: Testimonial[];
   guarantee: GuaranteeItem[];
   social: Social;
   projects: Project[];

@@ -17,7 +17,7 @@ export function Guarantee() {
       id="guarantee"
       className="py-24"
       style={{ background: "var(--bg)" }}
-      aria-label="Zero risk guarantee"
+      aria-label="Delivery standards"
     >
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
@@ -27,9 +27,9 @@ export function Guarantee() {
           viewport={{ once: true, margin: "-40px" }}
         >
           <SectionHeader
-            label="Zero Risk"
-            title="You're fully protected"
-            subtitle="I'm not satisfied unless you are. These guarantees are my commitment to every single client."
+            label="Delivery Standards"
+            title="Clear, reliable collaboration"
+            subtitle="A practical process from scope to launch, with regular reviews and a clean handover."
             center
           />
         </motion.div>

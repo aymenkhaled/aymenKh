@@ -137,4 +137,28 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
     "Reduced audit time and improved execution consistency for optimization tasks."
   ),
+
+  "library-stock-windows-pos-and-inventory": cs(
+    "A bookstore needed a dependable single-computer system for sales and inventory without relying on an internet connection.",
+    "Built an offline-first Windows application with POS, stock, purchases, returns, barcode workflows, ticket printing, backup, and restore.",
+    [
+      "Tauri 2 desktop application",
+      "Transactional Rust commands",
+      "Local SQLite persistence",
+      "Scanner and keyboard-focused sales flow",
+    ],
+    "Delivered a packaged Windows application designed for daily retail operations and durable local data storage."
+  ),
+
+  "berbry-3d-e-commerce-platform": cs(
+    "A fashion brand needed a polished commerce experience and practical tools to manage its catalog, orders, and visual content.",
+    "Built a responsive storefront and admin system with product variants, cart and checkout, order management, uploads, and interactive 3D product experiences.",
+    [
+      "React and TypeScript storefront",
+      "Three.js product experiences",
+      "Express API and authenticated admin flows",
+      "PostgreSQL and Drizzle data layer",
+    ],
+    "Created one full-stack platform for customer shopping and day-to-day store administration."
+  ),
 };

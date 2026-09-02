@@ -2,17 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Moon, Sun, Menu, X, Calendar } from "lucide-react";
+import { Moon, Menu, X, Calendar } from "lucide-react";
 import { data } from "@/data/portfolio";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -68,9 +66,8 @@ export function Navbar() {
         {/* Actions */}
         <div className="flex items-center gap-2.5">
           {/* Theme toggle */}
-          {mounted && (
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          <button
+              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
               className="w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-200 hover:scale-105"
               style={{
                 background: "var(--surface)",
@@ -79,9 +76,8 @@ export function Navbar() {
               }}
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
+              <Moon size={15} />
             </button>
-          )}
 
           {/* CTA */}
           <a

@@ -41,9 +41,9 @@ export function Booking() {
           className="text-center mb-10"
         >
           <SectionHeader
-            label="Let's Build Together"
-            title={`Ready to start\nyour project?`}
-            subtitle="Book a free 30-minute strategy call. No sales pitch, just useful direction and a clear next step."
+            label="Project Consultation"
+            title={`Let's discuss\nyour project`}
+            subtitle="Book a free 30-minute project consultation to discuss the scope, priorities, and next step."
             center
           />
         </motion.div>
@@ -72,10 +72,10 @@ export function Booking() {
             </div>
             <div>
               <p className="font-semibold mb-1" style={{ color: "var(--text)" }}>
-                Book a Free Strategy Call
+                30-Minute Project Consultation
               </p>
               <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-                30-minute call focused on your product goals and a practical implementation plan.
+                A focused call about your goals, constraints, timeline, and technical direction.
               </p>
             </div>
 

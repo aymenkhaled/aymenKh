@@ -4,19 +4,19 @@ export const data: PortfolioData = {
   name: "Aymen Khaled",
   photo: "/pic.png",
   title: [
-    "AI SaaS & Full-Stack Developer",
-    "AI Integrations Specialist",
-    "SaaS Platform Builder",
-    "Automation Systems Developer",
+    "Full-Stack Developer",
+    "AI SaaS Product Developer",
+    "Web, Mobile & Desktop Developer",
+    "Automation & API Developer",
   ],
-  bio: "AI SaaS and full-stack developer building production SaaS platforms, AI integrations, automation systems, and full-stack web/mobile apps with React, Node.js, Python, OpenAI, Groq, and real-time architecture.",
+  bio: "Full-stack developer building SaaS, web, mobile, and Windows desktop products with React, TypeScript, Node.js, FastAPI, Tauri, Rust, and PostgreSQL.",
   availability: true,
 
   stats: [
-    { value: "7+", label: "SaaS and AI Products" },
-    { value: "15+", label: "Projects Delivered" },
-    { value: "5+", label: "Years Building" },
-    { value: "100%", label: "Client Focus" },
+    { value: "65+", label: "AI Integrations" },
+    { value: "10+", label: "AI Assistants" },
+    { value: "3", label: "Public SaaS Products" },
+    { value: "1", label: "Packaged Windows App" },
   ],
 
   platforms: [
@@ -38,57 +38,64 @@ export const data: PortfolioData = {
     {
       title: "SaaS Platform Development",
       description:
-        "End-to-end SaaS products with multi-tenant architecture, role-based access, billing, AI workflows, and production deployment.",
+        "SaaS products with multi-tenant architecture, role-based access, billing, AI workflows, and deployment.",
       icon: "layers",
       size: "featured",
     },
     {
       title: "AI Integration",
       description:
-        "OpenAI and Groq integration into real products: assistants, automation flows, summaries, and smart workflows.",
+        "AI assistants, summaries, automation flows, and product integrations using OpenAI and Groq.",
       icon: "zap",
       size: "narrow",
     },
     {
       title: "Full Stack Web Development",
       description:
-        "High-quality web apps with React and Next.js frontend, and Node.js, FastAPI, or Django backend.",
+        "Responsive web applications with React or Next.js and Node.js, FastAPI, or Django backends.",
       icon: "plug",
       size: "narrow",
     },
     {
       title: "Real-time Applications",
       description:
-        "WebSocket-powered systems for live chat, notifications, and collaboration features.",
+        "WebSocket systems for live chat, notifications, and collaboration.",
       icon: "gauge",
       size: "half",
     },
     {
       title: "Mobile Development",
       description:
-        "React Native apps with API integration, IoT workflows, and reliable offline-friendly UX.",
+        "React Native apps with API integration, IoT workflows, and offline-friendly UX.",
       icon: "pen-tool",
       size: "half",
     },
     {
       title: "Database Architecture",
       description:
-        "Scalable data models and optimization using PostgreSQL, MongoDB, and analytics-ready schemas.",
+        "Data models and optimization using PostgreSQL, MongoDB, SQLite, and SQL Server.",
       icon: "database",
       size: "third",
     },
     {
       title: "API Development",
       description:
-        "Clean REST API design with authentication, documentation, and integration-ready contracts.",
+        "REST APIs with authentication, validation, documentation, and clear contracts.",
       icon: "cloud",
       size: "third",
     },
     {
       title: "Automation Systems",
       description:
-        "Scraping, enrichment, and outreach automation pipelines to reduce manual work for teams.",
+        "Scraping, enrichment, and outreach pipelines that reduce repetitive work.",
       icon: "search",
+      size: "third",
+    },
+    {
+      title: "Windows Desktop Apps",
+      description:
+        "Offline-first Windows applications with Tauri, Rust, SQLite, printing, and local installers.",
+      icon: "monitor",
       size: "third",
     },
   ],
@@ -133,6 +140,7 @@ export const data: PortfolioData = {
     { name: "JavaScript", category: "language" },
     { name: "TypeScript", category: "language" },
     { name: "Python", category: "language" },
+    { name: "Rust", category: "language" },
     { name: "Node.js", category: "backend" },
     { name: "FastAPI", category: "backend" },
     { name: "Django", category: "backend" },
@@ -148,12 +156,14 @@ export const data: PortfolioData = {
     { name: "MongoDB", category: "database" },
     { name: "SQL Server", category: "database" },
     { name: "Firebase", category: "database" },
+    { name: "SQLite", category: "database" },
     { name: "Docker", category: "devops" },
     { name: "Jenkins", category: "devops" },
     { name: "Git", category: "devops" },
     { name: "AWS", category: "devops" },
     { name: "Expo", category: "mobile" },
     { name: "IoT", category: "mobile" },
+    { name: "Tauri", category: "desktop" },
   ],
 
   projects: [
@@ -268,7 +278,7 @@ export const data: PortfolioData = {
       role: "Automation and Full Stack Developer",
       impact: "Scraped jobs from 40+ platforms and automated contact discovery workflows.",
       visibility: "Private Client",
-      thumbnail: "/web-scraper.png",
+      thumbnail: "/web-scraper.svg",
       tags: ["Python", "Node.js", "OpenAI", "MongoDB"],
       category: "Automation",
       liveUrl: "",
@@ -300,32 +310,58 @@ export const data: PortfolioData = {
       liveUrl: "",
       githubUrl: "",
     },
+    {
+      title: "Library Stock - Windows POS and Inventory",
+      description:
+        "Offline-first Windows application for bookstore sales, stock, purchases, returns, barcode workflows, printing, backup, and restore.",
+      role: "Full-Stack Desktop Developer",
+      impact: "Built a packaged Tauri application with transactional Rust commands and local SQLite storage.",
+      visibility: "Private Client",
+      thumbnail: "/library-stock.png",
+      tags: ["React", "TypeScript", "Tauri", "Rust", "SQLite"],
+      category: "Desktop",
+      liveUrl: "",
+      githubUrl: "",
+    },
+    {
+      title: "BERBRY - 3D E-commerce Platform",
+      description:
+        "Full-stack fashion commerce platform with a responsive storefront, product variants, cart and checkout, order management, admin workflows, and interactive 3D product experiences.",
+      role: "Full-Stack Developer",
+      impact: "Connected a React storefront and admin experience to an Express API and PostgreSQL data layer.",
+      visibility: "Private Client",
+      thumbnail: "/berbry.png",
+      tags: ["React", "TypeScript", "Three.js", "Express.js", "PostgreSQL"],
+      category: "E-Commerce",
+      liveUrl: "",
+      githubUrl: "",
+    },
   ],
 
   experience: [
     {
       company: "Everything to Gain",
       logo: "",
-      role: "Full Stack Web Developer",
-      startDate: "Feb 2025",
+      role: "Full-Stack Developer",
+      startDate: "Aug 2025",
       endDate: "Present",
       location: "Remote",
       description:
-        "Leading development of production AI SaaS products with multi-tenant architecture, automation, and real-time features.",
+        "Contributing to production AI SaaS products with multi-tenant architecture, automation, billing, and real-time features.",
       achievements: [
-        "Led Strategy Navigator, JourneyAI, and SaleSide AI from implementation to live product delivery.",
+        "Contributed to Strategy Navigator, JourneyAI, and SaleSide AI across frontend, backend, and product integrations.",
         "Integrated 65+ AI tools and shipped Stripe and PayPal billing workflows.",
         "Delivered Slack, Asana, and Basecamp integrations with real-time collaboration features.",
-        "Improved platform architecture and automated key product workflows.",
+        "Improved application architecture and automated key product workflows.",
       ],
     },
     {
       company: "Aziin Engineering Solution",
       logo: "",
       role: "Full Stack Developer (Intern)",
-      startDate: "2024",
-      endDate: "2024",
-      location: "Tunisia",
+      startDate: "Feb 2025",
+      endDate: "May 2025",
+      location: "Sfax, Tunisia",
       description:
         "Developed an e-learning platform with AI chatbot support, MERN backend features, authentication, and real-time WebSocket interactions.",
       achievements: [
@@ -357,42 +393,12 @@ export const data: PortfolioData = {
       endDate: "Aug 2022",
       location: "Tunisia",
       description:
-        "Developed e-commerce features using .NET, React, SQL Server, and MongoDB, covering product catalog, payments, and order workflows.",
+        "Developed e-commerce features covering product catalog, payments, and order workflows.",
       achievements: [
         "Implemented product catalog and order management workflows.",
-        "Worked across .NET, React, SQL Server, and MongoDB.",
+        "Worked across frontend, backend, and database modules.",
         "Contributed to deployment and maintenance of web application modules.",
       ],
-    },
-  ],
-
-  testimonials: [
-    {
-      name: "Michael T.",
-      photo: "",
-      project: "Strategy Navigator",
-      review:
-        "Aymen built a reliable SaaS foundation for our product with clear architecture, strong execution speed, and production-ready quality.",
-      rating: 5,
-      platform: "Direct",
-    },
-    {
-      name: "Sarah L.",
-      photo: "",
-      project: "JourneyAI",
-      review:
-        "The assistant workflows reduced repetitive work for our team and gave us a much cleaner sales process.",
-      rating: 5,
-      platform: "Direct",
-    },
-    {
-      name: "David K.",
-      photo: "",
-      project: "SaleSide AI",
-      review:
-        "Meeting capture and follow-up automation was delivered exactly as needed and integrated smoothly in our workflow.",
-      rating: 5,
-      platform: "Direct",
     },
   ],
 
@@ -421,7 +427,7 @@ export const data: PortfolioData = {
     upwork: "https://www.upwork.com/freelancers/~01adc11dd1f62fd715",
     linkedin: "https://www.linkedin.com/in/aymen-khaled-652724236/?skipRedirect=true",
     whatsapp: "https://wa.me/21626286045",
-    calendly: "https://calendly.com/khaledaymen850",
+    calendly: "https://calendly.com/khaledaymen850/30min",
     github: "https://github.com/aymenkhaled",
     email: "mailto:khaledaymen850@gmail.com",
   },

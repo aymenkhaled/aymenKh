@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aymen Khaled - AI SaaS & Full-Stack Developer",
+  title: "Aymen Khaled - Full-Stack Developer",
   description:
-    "AI SaaS and full-stack developer building production SaaS platforms, AI integrations, automation systems, and web/mobile apps with React, Node.js, Python, OpenAI, and Groq.",
+    "Full-stack developer building SaaS, web, mobile, Windows desktop, AI, and automation products with React, TypeScript, Node.js, FastAPI, Tauri, Rust, and PostgreSQL.",
   keywords: [
     "Full Stack Developer",
     "SaaS Development",
@@ -25,12 +25,14 @@ export const metadata: Metadata = {
     "React Developer",
     "Node.js Developer",
     "Next.js",
+    "Tauri",
+    "Windows Desktop Development",
     "Freelancer",
   ],
   openGraph: {
-    title: "Aymen Khaled - AI SaaS & Full-Stack Developer",
+    title: "Aymen Khaled - Full-Stack Developer",
     description:
-      "Building production SaaS platforms, AI integrations, automation systems, and real-time full-stack products.",
+      "Building SaaS, web, mobile, Windows desktop, AI, and automation products.",
     type: "website",
   },
   other: {
@@ -44,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.variable}>
         <ThemeProvider>
           {children}
-          <Analytics />
+          {process.env.VERCEL ? <Analytics /> : null}
         </ThemeProvider>
       </body>
     </html>

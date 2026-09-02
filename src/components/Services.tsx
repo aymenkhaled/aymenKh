@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import {
-  Layers, Zap, Plug, Gauge, PenTool, Cloud, Database, Search,
+  Layers, Zap, Plug, Gauge, PenTool, Cloud, Database, Search, Monitor,
   ArrowUpRight,
 } from "lucide-react";
 import { data } from "@/data/portfolio";
@@ -17,6 +17,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   cloud:      <Cloud size={22} />,
   database:   <Database size={22} />,
   search:     <Search size={22} />,
+  monitor:    <Monitor size={22} />,
 };
 
 export function Services() {
@@ -35,7 +36,7 @@ export function Services() {
           <SectionHeader
             label="What I Do"
             title="Services"
-            subtitle="Production-grade SaaS platforms, AI integrations, and full-stack applications — built to deliver measurable results."
+            subtitle="SaaS, web, mobile, desktop, AI, and automation products built for real use."
           />
         </motion.div>
 
