@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, ArrowRight, FileDown } from "lucide-react";
+import { Mail, ArrowRight, FileDown } from "lucide-react";
 import { data } from "@/data/portfolio";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
@@ -100,7 +100,7 @@ export function Hero() {
         >
           <div className="avail-badge" role="status" aria-live="polite">
             <span className="avail-dot" />
-            Available for new projects
+            Open to remote roles & freelance projects
           </div>
         </motion.div>
 
@@ -147,7 +147,7 @@ export function Hero() {
               </motion.span>
             </AnimatePresence>
           </span>
-          {" "}for teams that need production-ready delivery.
+          {" "}for teams building useful software.
         </motion.p>
 
         <motion.p
@@ -184,8 +184,8 @@ export function Hero() {
           className="flex gap-3 flex-wrap justify-center mb-10"
         >
           <a href="#booking" className="btn-primary">
-            <Calendar size={15} />
-            Book a Free Consultation
+            <Mail size={15} />
+            Contact Me
           </a>
           <a href="#projects" className="btn-secondary">
             See My Work

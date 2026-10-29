@@ -20,7 +20,7 @@ export function Navbar() {
     { href: "#services", label: "Services" },
     { href: "#projects", label: "Projects" },
     { href: "#experience", label: "Experience" },
-    { href: "#outcomes", label: "Outcomes" },
+    
     { href: "#booking", label: "Contact" },
   ];
 
@@ -56,7 +56,7 @@ export function Navbar() {
                 {l.label}
                 <span
                   className="absolute -bottom-0.5 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-200 rounded"
-                  style={{ background: "var(--accent)" }}
+                  style={{ background: "var(--accent)", color: "var(--on-accent)" }}
                 />
               </a>
             </li>
@@ -83,7 +83,7 @@ export function Navbar() {
           <a
             href="#booking"
             className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-bold text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-px"
-            style={{ background: "var(--accent)" }}
+            style={{ background: "var(--accent)", color: "var(--on-accent)" }}
           >
             <Calendar size={13} />
             Let&apos;s Talk
@@ -98,7 +98,7 @@ export function Navbar() {
               color: "var(--text-muted)",
             }}
             onClick={() => setMenuOpen((o) => !o)}
-            aria-label="Toggle menu"
+            aria-label="Toggle menu" aria-controls="mobile-navigation"
             aria-expanded={menuOpen}
           >
             {menuOpen ? <X size={16} /> : <Menu size={16} />}
@@ -109,7 +109,7 @@ export function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div
-          className="fixed top-16 left-0 right-0 z-40 flex flex-col gap-1 px-6 py-5 border-b"
+          id="mobile-navigation" className="fixed top-16 left-0 right-0 z-40 flex flex-col gap-1 px-6 py-5 border-b"
           style={{ background: "var(--bg)", borderColor: "var(--border)" }}
         >
           {navLinks.map((l) => (
@@ -129,7 +129,7 @@ export function Navbar() {
           <a
             href="#booking"
             className="mt-3 flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-bold text-white"
-            style={{ background: "var(--accent)" }}
+            style={{ background: "var(--accent)", color: "var(--on-accent)" }}
             onClick={() => setMenuOpen(false)}
           >
             <Calendar size={14} /> Let&apos;s Talk

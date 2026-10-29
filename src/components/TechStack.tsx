@@ -23,7 +23,7 @@ function TechIcon({ name, category }: { name: string; category: string }) {
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={iconUrl}
-      alt={name}
+      alt=""
       width={18}
       height={18}
       className="w-[18px] h-[18px] shrink-0 object-contain"
@@ -86,6 +86,7 @@ function StackRow({
           return (
             <div
               key={i}
+              aria-hidden={i >= items.length}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border whitespace-nowrap text-sm font-semibold transition-all duration-200 cursor-default hover:scale-105"
               style={{
                 background: "var(--surface)",

@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { ExternalLink, GitBranch, ArrowRight, Briefcase, BarChart3, Eye } from "lucide-react";
 import { data } from "@/data/portfolio";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getTechIconUrl } from "@/lib/techIcons";
+import { toSlug } from "@/lib/slug";
 
 function TechIcon({ tag }: { tag: string }) {
   const iconUrl = getTechIconUrl(tag);
@@ -69,6 +71,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
             src={project.thumbnail}
             alt={project.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover object-top"
             onError={() => setImgErr(true)}
           />
@@ -92,7 +95,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
         )}
 
         <div
-          className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300"
           style={{
             background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)",
           }}
@@ -104,10 +107,10 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-white transition-all hover:opacity-90"
-                style={{ background: "var(--accent)" }}
+                style={{ background: "var(--accent)", color: "var(--on-accent)" }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <ExternalLink size={11} /> Live Demo
+                <ExternalLink size={11} /> Visit Product
               </a>
             )}
             {project.githubUrl && (
@@ -174,7 +177,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
           </p>
           <p className="inline-flex items-center gap-1.5">
             <Eye size={12} />
-            <span>{project.visibility}</span>
+            <span>{project.status ?? project.visibility}</span>
           </p>
         </div>
 
@@ -190,7 +193,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
               className="inline-flex items-center gap-1.5 text-xs font-bold transition-opacity hover:opacity-70"
               style={{ color: "var(--accent)" }}
             >
-              View Live Project <ArrowRight size={11} />
+              Visit Product <ArrowRight size={11} />
             </a>
           ) : project.githubUrl ? (
             <a
@@ -207,9 +210,12 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
               className="inline-flex items-center gap-1.5 text-xs font-bold"
               style={{ color: "var(--text-dim)" }}
             >
-              Private client project
+              {project.visibility}
             </span>
           )}
+          <Link href={`/projects/${toSlug(project.title)}`} className="mt-3 flex items-center gap-1.5 text-sm font-semibold" style={{ color: "var(--accent)" }}>
+            Read case study <ArrowRight size={12} />
+          </Link>
         </div>
       </div>
     </motion.article>
@@ -219,9 +225,12 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
 export function Projects() {
   const categories = ["All", ...Array.from(new Set(data.projects.map((p) => p.category)))];
   const [active, setActive] = useState("All");
+  const [showAll, setShowAll] = useState(false);
 
   const filtered =
-    active === "All" ? data.projects : data.projects.filter((p) => p.category === active);
+    active === "All"
+      ? showAll ? data.projects : data.projects.filter((p) => p.featured)
+      : data.projects.filter((p) => p.category === active);
 
   return (
     <section
@@ -240,7 +249,7 @@ export function Projects() {
           <SectionHeader
             label="Portfolio"
             title="Featured Projects"
-            subtitle="A curated selection of recent work, each focused on solving business problems with measurable outcomes."
+            subtitle="Three featured products, with my contribution, technical approach and current status. Explore the rest by category."
           />
         </motion.div>
 
@@ -250,7 +259,7 @@ export function Projects() {
           transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1], delay: 0.1 }}
           viewport={{ once: true }}
           className="flex flex-wrap gap-2 mb-10"
-          role="tablist"
+          role="group"
           aria-label="Filter projects by category"
         >
           {categories.map((cat) => {
@@ -258,13 +267,12 @@ export function Projects() {
             return (
               <button
                 key={cat}
-                role="tab"
-                aria-selected={isActive}
+                aria-pressed={isActive}
                 onClick={() => setActive(cat)}
                 className="px-4 py-1.5 rounded-full text-sm font-semibold border transition-all duration-200"
                 style={{
                   background: isActive ? "var(--accent)" : "var(--surface)",
-                  color: isActive ? "#fff" : "var(--text-muted)",
+                  color: isActive ? "var(--on-accent)" : "var(--text-muted)",
                   borderColor: isActive ? "var(--accent)" : "var(--border)",
                   transform: isActive ? "scale(1.03)" : "scale(1)",
                 }}
@@ -284,6 +292,13 @@ export function Projects() {
             </AnimatePresence>
           </motion.div>
         </LayoutGroup>
+        {active === "All" && (
+          <div className="mt-8 text-center">
+            <button type="button" className="btn-secondary" aria-expanded={showAll} onClick={() => setShowAll(!showAll)}>
+              {showAll ? "Show featured projects" : `Explore all ${data.projects.length} projects`}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

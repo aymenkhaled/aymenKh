@@ -27,17 +27,17 @@ export function Process() {
             <SectionHeader
               label="How I Work"
               title={`A process\nbuilt for results`}
-              subtitle="Every project follows a proven framework that keeps you informed, on schedule, and confident at every step."
+              subtitle="Clear requirements, short written updates and reviewable changes, whether I join your team or deliver a defined project."
             />
             <div
               className="mt-6 p-5 rounded-2xl border"
               style={{ background: "var(--accent-dim)", borderColor: "var(--border-accent)" }}
             >
               <p className="text-sm font-semibold" style={{ color: "var(--accent)" }}>
-                💬 Free strategy call included
+                Written updates, focused calls
               </p>
               <p className="text-xs mt-1.5 leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                Before any commitment, we hop on a free 30-minute call to make sure we&apos;re the right fit for each other.
+                I prefer written communication and clear task tracking. A brief weekly call or a focused discussion helps when a decision needs it.
               </p>
             </div>
           </motion.div>

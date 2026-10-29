@@ -13,10 +13,10 @@ export const data: PortfolioData = {
   availability: true,
 
   stats: [
-    { value: "65+", label: "AI Integrations" },
-    { value: "10+", label: "AI Assistants" },
-    { value: "3", label: "Public SaaS Products" },
-    { value: "1", label: "Packaged Windows App" },
+    { value: "2", label: "Kessetna Windows products" },
+    { value: "1", label: "Android companion" },
+    { value: "3", label: "Featured case studies" },
+    { value: "4", label: "Professional roles" },
   ],
 
   platforms: [
@@ -103,31 +103,31 @@ export const data: PortfolioData = {
   process: [
     {
       step: 1,
-      title: "Discovery Call",
+      title: "Understand the Brief",
       description:
-        "We define goals, constraints, and the metrics that will prove project success.",
-      badge: "Day 1",
+        "We clarify requirements, the existing codebase and acceptance criteria in writing, with a call when useful.",
+      badge: "Discovery",
     },
     {
       step: 2,
       title: "Scope and Plan",
       description:
         "You get a clear implementation scope, timeline, and delivery milestones.",
-      badge: "Day 2-3",
+      badge: "Planning",
     },
     {
       step: 3,
       title: "Build in Iterations",
       description:
         "I ship in checkpoints with regular updates so you can review progress continuously.",
-      badge: "Week 1-N",
+      badge: "Development",
     },
     {
       step: 4,
       title: "Launch and Handover",
       description:
         "Final QA, deployment support, and documentation for smooth product ownership.",
-      badge: "Final Week",
+      badge: "Delivery",
     },
   ],
 
@@ -168,175 +168,259 @@ export const data: PortfolioData = {
 
   projects: [
     {
-      title: "Strategy Navigator - AI SaaS Platform",
-      description:
-        "Problem: strategy teams were using disconnected tools and manual workflows. Solution: built a multi-tenant platform with RBAC, AI assistants, analytics, and billing integrations. Outcome: improved API throughput and shipped a production platform with active users.",
-      role: "Full Stack Web Developer",
-      impact: "Integrated 65+ AI tools and delivered live billing plus collaboration integrations.",
-      visibility: "Public",
-      thumbnail: "/strategy-navigator.png",
-      tags: ["React", "Node.js", "OpenAI", "Stripe"],
-      category: "SaaS",
-      liveUrl: "https://strategynavigator.ai/",
-      githubUrl: "",
+        "title": "Kessetna Retail & Kessetna BTP",
+        "description": "Built two offline-first Windows products end to end: retail sales and stock management, and construction equipment rental with returns, payments and deposits. Added a companion Android app for remote monitoring.",
+        "role": "Product creator & full-stack developer",
+        "impact": "My contribution: interface, business logic, local database, desktop/mobile applications, installers and product websites.",
+        "visibility": "Public",
+        "thumbnail": "/kessetna-retail.png",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Tauri",
+            "Rust",
+            "SQLite",
+            "React Native"
+        ],
+        "category": "Desktop",
+        "liveUrl": "https://kessetna.com/fr/",
+        "githubUrl": "",
+        "featured": true,
+        "status": "Windows releases · Android monitoring pilot"
     },
     {
-      title: "JourneyAI - AI Sales Assistant Platform",
-      description:
-        "Problem: sales teams spent too much time preparing and following up after meetings. Solution: built AI assistants for meeting prep, summaries, and follow-up generation with real-time capabilities. Outcome: deployed a live assistant suite used in production workflows.",
-      role: "Full Stack Web Developer",
-      impact: "Built 10+ assistants with chat, speech, and billing features.",
-      visibility: "Public",
-      thumbnail: "/journeyai.png",
-      tags: ["React", "FastAPI", "OpenAI", "WebSocket"],
-      category: "AI Tool",
-      liveUrl: "https://meetjourney.ai/",
-      githubUrl: "",
+        "title": "SaleSide AI - Sales Meeting Assistant",
+        "description": "Built the initial application and core technical foundation from scratch, including frontend and backend development and real-time AI meeting workflows.",
+        "role": "Full-Stack Developer — initial product foundation",
+        "impact": "My contribution: initial product foundation, transcription and AI meeting workflows.",
+        "visibility": "Public",
+        "thumbnail": "/saleside.png",
+        "tags": [
+            "Python",
+            "WebSocket",
+            "OpenAI"
+        ],
+        "category": "AI Tool",
+        "liveUrl": "https://saleside.ai/",
+        "githubUrl": "",
+        "status": "Live SaaS product",
+        "featured": true
     },
     {
-      title: "SaleSide AI - Sales Meeting Assistant",
-      description:
-        "Problem: teams were losing key meeting details and follow-up actions. Solution: automated transcription, objection tracking, AI summaries, and action extraction. Outcome: improved follow-up consistency and reduced manual note-taking.",
-      role: "Full Stack Web Developer",
-      impact: "Delivered end-to-end automation for capture, summary, and next actions.",
-      visibility: "Public",
-      thumbnail: "/saleside.png",
-      tags: ["Python", "WebSocket", "OpenAI"],
-      category: "AI Tool",
-      liveUrl: "https://saleside.ai/",
-      githubUrl: "",
+        "title": "JourneyAI - AI Sales Assistant Platform",
+        "description": "Developed multiple custom AI chat assistants, refined prompts and assistant behaviour, and shipped feature updates and bug fixes in an existing sales-assistant platform.",
+        "role": "Full-Stack Developer — AI assistants & product updates",
+        "impact": "My contribution: custom assistants, file uploads, chat history, workspace access and ongoing fixes.",
+        "visibility": "Public",
+        "thumbnail": "/journeyai.png",
+        "tags": [
+            "React",
+            "FastAPI",
+            "OpenAI",
+            "WebSocket"
+        ],
+        "category": "AI Tool",
+        "liveUrl": "https://meetjourney.ai/",
+        "githubUrl": "",
+        "status": "Live SaaS product",
+        "featured": true
     },
     {
-      title: "RxCare / Deep Analyzer Suite",
-      description:
-        "Problem: pharmacy, medication, and family-care workflows were split across too many disconnected tools. Solution: built a healthcare mobile app with prescriptions, refill tracking, drug interaction checks, telehealth, secure messaging, lab and vitals tracking, and an AI pharmacist assistant. Outcome: unified medication adherence, care coordination, and health tracking into one mobile experience.",
-      role: "Full Stack Mobile Developer",
-      impact: "Delivered Expo and Express healthcare workflows with AI pharmacist chat, refill planning, and coordinated family care features.",
-      visibility: "Private Client",
-      thumbnail: "/rxcare-suite.svg",
-      tags: ["React Native", "Expo", "TypeScript", "Express.js", "OpenAI"],
-      category: "Healthcare",
-      liveUrl: "",
-      githubUrl: "",
+        "title": "Strategy Navigator - AI SaaS Platform",
+        "description": "Contributed to multi-tenant workflows, role-based access, AI features, billing and collaboration integrations as part of the engineering team.",
+        "role": "Full Stack Web Developer",
+        "impact": "My contribution: application features, integrations and backend improvements.",
+        "visibility": "Past contribution",
+        "thumbnail": "/strategy-navigator.png",
+        "tags": [
+            "React",
+            "Node.js",
+            "OpenAI",
+            "Stripe"
+        ],
+        "category": "SaaS",
+        "liveUrl": "",
+        "githubUrl": "",
+        "status": "Past contribution; public link unavailable"
     },
     {
-      title: "Tunisia Auto Connect / AutoTN",
-      description:
-        "Problem: Tunisian drivers and sellers needed one localized platform for diagnostics, valuation, and vehicle marketplace workflows. Solution: built a trilingual automotive app with AI diagnostics, VIN decoding, price estimation, listings, seller profiles, WhatsApp contact, and Arabic, French, and English support with RTL handling. Outcome: combined service, marketplace, and buyer research flows into one mobile product.",
-      role: "Full Stack Mobile Developer",
-      impact: "Shipped AI car diagnostics, listing comparison, marketplace flows, and trilingual mobile UX tailored for Tunisia.",
-      visibility: "Private Client",
-      thumbnail: "/autotn-market.svg",
-      tags: ["React Native", "Expo", "TypeScript", "Express.js", "PostgreSQL", "OpenAI"],
-      category: "Marketplace",
-      liveUrl: "",
-      githubUrl: "",
+        "title": "RxCare / Deep Analyzer Suite",
+        "description": "Built mobile healthcare application workflows for prescription and refill tracking, care messaging and AI assistant features.",
+        "role": "Full Stack Mobile Developer",
+        "impact": "React Native/Expo application with healthcare workflows and an Express backend.",
+        "visibility": "Private work",
+        "thumbnail": "/rxcare-suite.svg",
+        "tags": [
+            "React Native",
+            "Expo",
+            "TypeScript",
+            "Express.js",
+            "OpenAI"
+        ],
+        "category": "Healthcare",
+        "liveUrl": "",
+        "githubUrl": ""
     },
     {
-      title: "Integrity Solve - AML/CTF Compliance Portal",
-      description:
-        "Problem: regulated businesses needed a structured way to manage due diligence, risk routing, verification, and audit evidence. Solution: built a compliance SaaS prototype with onboarding wizards, case management, verification checks, reviewer decisions, escalation handling, and PDF audit summaries. Outcome: centralized AML and CTF operations into one review-ready compliance workflow.",
-      role: "Full Stack Web Developer",
-      impact: "Built verification-ready AML workflows, case management, evidence packs, and audit summaries for compliance teams.",
-      visibility: "Private Client",
-      thumbnail: "/integrity-solve.svg",
-      tags: ["React", "TypeScript", "Express.js", "PostgreSQL"],
-      category: "Compliance",
-      liveUrl: "",
-      githubUrl: "",
+        "title": "Tunisia Auto Connect / AutoTN",
+        "description": "Built Arabic, French and English marketplace flows with RTL support, listings, seller profiles and WhatsApp contact, plus AI-assisted vehicle features.",
+        "role": "Full Stack Mobile Developer",
+        "impact": "My contribution: mobile interface, marketplace APIs and multilingual workflows.",
+        "visibility": "Private work",
+        "thumbnail": "/autotn-market.svg",
+        "tags": [
+            "React Native",
+            "Expo",
+            "TypeScript",
+            "Express.js",
+            "PostgreSQL",
+            "OpenAI"
+        ],
+        "category": "Marketplace",
+        "liveUrl": "",
+        "githubUrl": ""
     },
     {
-      title: "LMS with AI Integration and WebSocket",
-      description:
-        "Problem: e-learning engagement dropped with static content workflows. Solution: built a learning platform with AI chatbot support and real-time communication. Outcome: delivered a scalable learning product with live collaboration features.",
-      role: "Full Stack Developer (Intern)",
-      impact: "Implemented real-time learning experience with chatbot support.",
-      visibility: "Public",
-      thumbnail: "/lms.PNG",
-      tags: ["React", "Node.js", "MongoDB", "WebSocket"],
-      category: "Education",
-      liveUrl: "https://e-learning-five-tau.vercel.app",
-      githubUrl: "",
+        "title": "Integrity Solve - AML/CTF Compliance Portal",
+        "description": "Built a compliance prototype with onboarding, case review, reviewer decisions, escalations and PDF audit summaries.",
+        "role": "Full Stack Web Developer",
+        "impact": "Prototype covering review workflows and evidence summaries.",
+        "visibility": "Prototype",
+        "thumbnail": "/integrity-solve.svg",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Express.js",
+            "PostgreSQL"
+        ],
+        "category": "Compliance",
+        "liveUrl": "",
+        "githubUrl": "",
+        "status": "Prototype"
     },
     {
-      title: "E-commerce Dashboard",
-      description:
-        "Problem: product and order visibility was fragmented across tools. Solution: developed a central dashboard for analytics, inventory, and order tracking. Outcome: faster operational decisions through a unified interface.",
-      role: "Full Stack Developer",
-      impact: "Consolidated critical commerce workflows into one dashboard.",
-      visibility: "Public",
-      thumbnail: "/dash.PNG",
-      tags: ["React", "Node.js", "PostgreSQL"],
-      category: "E-Commerce",
-      liveUrl: "https://dashboard-rho-gray-61.vercel.app/dashboard",
-      githubUrl: "https://github.com/aymenkhaled/dashboard",
+        "title": "LMS with AI Integration and WebSocket",
+        "description": "Built a MERN e-learning platform during an internship, covering course management, authentication, AI chatbot support and real-time classroom features.",
+        "role": "Full Stack Developer (Intern)",
+        "impact": "My contribution: course, authentication, AI and WebSocket workflows.",
+        "visibility": "Public",
+        "thumbnail": "/lms.PNG",
+        "tags": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "WebSocket"
+        ],
+        "category": "Education",
+        "liveUrl": "https://e-learning-five-tau.vercel.app",
+        "githubUrl": "",
+        "status": "Public demo"
     },
     {
-      title: "Job Scraper and Outreach Automation",
-      description:
-        "Problem: outreach teams spent hours manually finding leads and contact data. Solution: built automated scraping and enrichment pipelines across multiple job and company sources. Outcome: scaled prospect discovery and enabled personalized AI-driven outreach at volume.",
-      role: "Automation and Full Stack Developer",
-      impact: "Scraped jobs from 40+ platforms and automated contact discovery workflows.",
-      visibility: "Private Client",
-      thumbnail: "/web-scraper.svg",
-      tags: ["Python", "Node.js", "OpenAI", "MongoDB"],
-      category: "Automation",
-      liveUrl: "",
-      githubUrl: "",
+        "title": "E-commerce Dashboard",
+        "description": "Built a React dashboard for exploring commerce analytics, inventory and order-management interfaces.",
+        "role": "Full Stack Developer",
+        "impact": "Dashboard interface and commerce data views.",
+        "visibility": "Public",
+        "thumbnail": "/dash.PNG",
+        "tags": [
+            "React",
+            "Node.js",
+            "PostgreSQL"
+        ],
+        "category": "E-Commerce",
+        "liveUrl": "https://dashboard-rho-gray-61.vercel.app/dashboard",
+        "githubUrl": "https://github.com/aymenkhaled/dashboard",
+        "status": "Public demo"
     },
     {
-      title: "Outreach Personalization Engine",
-      description:
-        "Problem: cold emails were generic and underperforming. Solution: generated AI-customized outreach from company profile signals and lead context. Outcome: improved personalization quality while reducing manual writing time.",
-      role: "Automation and Full Stack Developer",
-      impact: "Connected lead enrichment with AI content generation in one workflow.",
-      visibility: "Private Client",
-      thumbnail: "/outreach.png",
-      tags: ["Python", "OpenAI", "Node.js"],
-      category: "Automation",
-      liveUrl: "",
-      githubUrl: "",
+        "title": "Job Scraper and Outreach Automation",
+        "description": "Built scraping and enrichment pipelines for job listings and company contacts, with deduplication and AI-assisted outreach preparation.",
+        "role": "Automation and Full Stack Developer",
+        "impact": "My contribution: data collection, enrichment and draft generation.",
+        "visibility": "Private work",
+        "thumbnail": "/web-scraper.svg",
+        "tags": [
+            "Python",
+            "Node.js",
+            "OpenAI",
+            "MongoDB"
+        ],
+        "category": "Automation",
+        "liveUrl": "",
+        "githubUrl": ""
     },
     {
-      title: "SEO Optimization SaaS - Issue Detector",
-      description:
-        "Problem: teams could not quickly identify high-impact SEO issues. Solution: built a platform to audit pages, detect issues, and prioritize fixes. Outcome: gave teams a structured action plan to improve search performance.",
-      role: "Full Stack Developer",
-      impact: "Automated site health checks with actionable optimization guidance.",
-      visibility: "Private Client",
-      thumbnail: "/website-img-2.webp",
-      tags: ["React", "Node.js", "PostgreSQL"],
-      category: "SaaS",
-      liveUrl: "",
-      githubUrl: "",
+        "title": "Outreach Personalization Engine",
+        "description": "Built a workflow that combines company and lead context with AI-generated outreach drafts for review.",
+        "role": "Automation and Full Stack Developer",
+        "impact": "Company-context enrichment and message preparation.",
+        "visibility": "Private work",
+        "thumbnail": "/outreach.png",
+        "tags": [
+            "Python",
+            "OpenAI",
+            "Node.js"
+        ],
+        "category": "Automation",
+        "liveUrl": "",
+        "githubUrl": ""
     },
     {
-      title: "Library Stock - Windows POS and Inventory",
-      description:
-        "Offline-first Windows application for bookstore sales, stock, purchases, returns, barcode workflows, printing, backup, and restore.",
-      role: "Full-Stack Desktop Developer",
-      impact: "Built a packaged Tauri application with transactional Rust commands and local SQLite storage.",
-      visibility: "Private Client",
-      thumbnail: "/library-stock.png",
-      tags: ["React", "TypeScript", "Tauri", "Rust", "SQLite"],
-      category: "Desktop",
-      liveUrl: "",
-      githubUrl: "",
+        "title": "SEO Optimization SaaS - Issue Detector",
+        "description": "Built website crawling and SEO issue-detection workflows, grouping related findings and prioritizing fixes in an audit interface.",
+        "role": "Full Stack Developer",
+        "impact": "My contribution: crawler, issue grouping, prioritization and audit interface.",
+        "visibility": "Private work",
+        "thumbnail": "/website-img-2.webp",
+        "tags": [
+            "React",
+            "FastAPI",
+            "PostgreSQL",
+            "Redis"
+        ],
+        "category": "SaaS",
+        "liveUrl": "",
+        "githubUrl": ""
     },
     {
-      title: "BERBRY - 3D E-commerce Platform",
-      description:
-        "Full-stack fashion commerce platform with a responsive storefront, product variants, cart and checkout, order management, admin workflows, and interactive 3D product experiences.",
-      role: "Full-Stack Developer",
-      impact: "Connected a React storefront and admin experience to an Express API and PostgreSQL data layer.",
-      visibility: "Private Client",
-      thumbnail: "/berbry.png",
-      tags: ["React", "TypeScript", "Three.js", "Express.js", "PostgreSQL"],
-      category: "E-Commerce",
-      liveUrl: "",
-      githubUrl: "",
+        "title": "Library Stock - Windows POS and Inventory",
+        "description": "Offline-first Windows application for bookstore sales, stock, purchases, returns, barcode workflows, printing, backup, and restore.",
+        "role": "Full-Stack Desktop Developer",
+        "impact": "My contribution: offline sales and inventory workflows, Rust transactions and Windows packaging.",
+        "visibility": "Private work",
+        "thumbnail": "/library-stock.png",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Tauri",
+            "Rust",
+            "SQLite"
+        ],
+        "category": "Desktop",
+        "liveUrl": "",
+        "githubUrl": "",
+        "status": "Windows desktop application"
     },
-  ],
+    {
+        "title": "BERBRY - 3D E-commerce Platform",
+        "description": "Full-stack fashion commerce platform with a responsive storefront, product variants, cart and checkout, order management, admin workflows, and interactive 3D product experiences.",
+        "role": "Full-Stack Developer",
+        "impact": "Connected a React storefront and admin experience to an Express API and PostgreSQL data layer.",
+        "visibility": "Private work",
+        "thumbnail": "/berbry.png",
+        "tags": [
+            "React",
+            "TypeScript",
+            "Three.js",
+            "Express.js",
+            "PostgreSQL"
+        ],
+        "category": "E-Commerce",
+        "liveUrl": "",
+        "githubUrl": ""
+    }
+],
 
   experience: [
     {
@@ -350,8 +434,8 @@ export const data: PortfolioData = {
         "Contributing to production AI SaaS products with multi-tenant architecture, automation, billing, and real-time features.",
       achievements: [
         "Contributed to Strategy Navigator, JourneyAI, and SaleSide AI across frontend, backend, and product integrations.",
-        "Integrated 65+ AI tools and shipped Stripe and PayPal billing workflows.",
-        "Delivered Slack, Asana, and Basecamp integrations with real-time collaboration features.",
+        "Worked on AI integrations and Stripe and PayPal billing workflows.",
+        "Worked on Slack, Asana and Basecamp integrations and real-time features.",
         "Improved application architecture and automated key product workflows.",
       ],
     },

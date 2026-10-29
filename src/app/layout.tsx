@@ -12,9 +12,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aymen-kh.vercel.app"),
+  alternates: { canonical: "/" },
   title: "Aymen Khaled - Full-Stack Developer",
   description:
-    "Full-stack developer building SaaS, web, mobile, Windows desktop, AI, and automation products with React, TypeScript, Node.js, FastAPI, Tauri, Rust, and PostgreSQL.",
+    "Aymen Khaled, full-stack developer in Tunisia. SaaS, AI, web, mobile and Windows applications. Open to remote developer roles and freelance collaboration.",
   keywords: [
     "Full Stack Developer",
     "SaaS Development",

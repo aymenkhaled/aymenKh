@@ -5,7 +5,6 @@ import { Projects } from "@/components/Projects";
 import { Experience } from "@/components/Experience";
 import { Process } from "@/components/Process";
 import { TechStack } from "@/components/TechStack";
-import { Testimonials } from "@/components/Testimonials";
 import { Guarantee } from "@/components/Guarantee";
 import { Booking } from "@/components/Booking";
 import { Footer } from "@/components/Footer";
@@ -14,14 +13,14 @@ export default function Home() {
   return (
     <>
       <div className="noise-overlay" aria-hidden="true" />
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
-        <Services />
-        <Testimonials />
         <Projects />
-        <Process />
         <Experience />
+        <Services />
+        <Process />
         <TechStack />
         <Guarantee />
         <Booking />

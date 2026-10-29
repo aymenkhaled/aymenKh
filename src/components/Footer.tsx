@@ -1,4 +1,4 @@
-﻿import { data } from "@/data/portfolio";
+import { data } from "@/data/portfolio";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -7,7 +7,7 @@ export function Footer() {
     { href: "#services",     label: "Services" },
     { href: "#projects",     label: "Projects" },
     { href: "#experience",   label: "Experience" },
-    { href: "#outcomes", label: "Outcomes" },
+    
     { href: "#booking",      label: "Contact" },
   ];
 
@@ -51,7 +51,7 @@ export function Footer() {
         {data.availability && (
           <div className="flex items-center gap-2 text-xs font-semibold" style={{ color: "var(--accent)" }}>
             <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-            Open to Projects
+            Open to roles & projects
           </div>
         )}
       </div>

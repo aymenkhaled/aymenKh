@@ -35,7 +35,7 @@ export function Services() {
         >
           <SectionHeader
             label="What I Do"
-            title="Services"
+            title="How I Can Help"
             subtitle="SaaS, web, mobile, desktop, AI, and automation products built for real use."
           />
         </motion.div>
@@ -118,9 +118,9 @@ export function Services() {
                 {/* Stats row */}
                 <div className="flex flex-wrap gap-6 mt-6">
                   {[
-                    { val: "65+", lbl: "AI tools integrated" },
-                    { val: "40+", lbl: "Platforms scraped" },
-                    { val: "10+", lbl: "AI assistants built" },
+                    { val: "AI", lbl: "Custom assistants" },
+                    { val: "API", lbl: "Product integrations" },
+                    { val: "Full stack", lbl: "Interface to deployment" },
                   ].map(({ val, lbl }) => (
                     <div key={lbl}>
                       <p
@@ -213,12 +213,12 @@ function ServiceCard({
       </p>
 
       {/* Arrow on hover */}
-      <div className="mt-4 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <a href="#booking" className="mt-4 inline-flex items-center gap-1">
         <span className="text-xs font-semibold" style={{ color: "var(--accent)" }}>
-          Learn more
+          Discuss this work
         </span>
         <ArrowUpRight size={12} style={{ color: "var(--accent)" }} />
-      </div>
+      </a>
     </motion.div>
   );
 }

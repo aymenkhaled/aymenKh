@@ -53,7 +53,9 @@ export interface Project {
   description: string;
   role: string;
   impact: string;
-  visibility: "Public" | "Private Client";
+  visibility: "Public" | "Private work" | "Prototype" | "Past contribution";
+  status?: string;
+  featured?: boolean;
   thumbnail: string;
   tags: string[];
   category: string;

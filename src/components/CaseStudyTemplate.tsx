@@ -44,7 +44,7 @@ function TechPill({ tag }: { tag: string }) {
 const SECTIONS: readonly { num: string; label: string; key: keyof CaseStudy }[] = [
   { num: "01", label: "The Problem",  key: "problem"  },
   { num: "02", label: "The Solution", key: "solution" },
-  { num: "03", label: "The Results",  key: "results"  },
+  { num: "03", label: "Delivery & Status",  key: "results"  },
 ];
 
 const ease = [0.4, 0, 0.2, 1] as const;
@@ -104,7 +104,7 @@ export function CaseStudyTemplate({ study, project }: Props) {
                 className="inline-flex items-center gap-1.5 text-xs font-semibold transition-opacity hover:opacity-70"
                 style={{ color: "var(--accent)" }}
               >
-                <ExternalLink size={12} /> Live Demo
+                <ExternalLink size={12} /> Visit Product
               </a>
             )}
             {project?.githubUrl && (
