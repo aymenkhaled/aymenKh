@@ -1,23 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Mail, ArrowRight, FileDown } from "lucide-react";
 import { data } from "@/data/portfolio";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
-const WORDS = ["SaaS products", "web apps", "mobile apps", "Windows desktop apps"];
 const ease = [0.4, 0, 0.2, 1] as const;
 
 export function Hero() {
-  const [wordIdx, setWordIdx] = useState(0);
   const [imgError, setImgError] = useState(false);
-
-  useEffect(() => {
-    const t = setInterval(() => setWordIdx((i) => (i + 1) % WORDS.length), 2600);
-    return () => clearInterval(t);
-  }, []);
 
   const initials = data.name
     .split(" ")
@@ -123,31 +116,7 @@ export function Hero() {
           className="font-semibold mb-6 flex items-center justify-center gap-2 flex-wrap"
           style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)", color: "var(--text-muted)" }}
         >
-          I build{" "}
-          <span
-            className="relative inline-block font-black"
-            style={{ minWidth: "10ch" }}
-          >
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={wordIdx}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.22, ease }}
-                className="inline-block"
-                style={{
-                  background: "linear-gradient(135deg, #10b981 0%, #3b82f6 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                {WORDS[wordIdx]}
-              </motion.span>
-            </AnimatePresence>
-          </span>
-          {" "}for teams building useful software.
+          Web, mobile, desktop and AI products.
         </motion.p>
 
         <motion.p
