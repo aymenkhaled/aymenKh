@@ -19,17 +19,14 @@ export const TECH_SLUG: Record<string, string> = {
   HubSpot: "hubspot",
   PostgreSQL: "postgresql",
   MongoDB: "mongodb",
-  "SQL Server": "microsoftsqlserver",
   Firebase: "firebase",
   Docker: "docker",
   Jenkins: "jenkins",
   Git: "git",
-  AWS: "amazonaws",
   Expo: "expo",
   IoT: "arduino",
   Puppeteer: "puppeteer",
   Cheerio: "cheerio",
-  Lighthouse: "googlelighthouse",
 };
 
 export const TECH_COLORS: Record<string, string> = {
@@ -66,7 +63,5 @@ export const TECH_COLORS: Record<string, string> = {
 
 export function getTechIconUrl(name: string) {
   const slug = TECH_SLUG[name];
-  if (!slug) return "";
-  const color = TECH_COLORS[name] ?? "64748B";
-  return `https://api.iconify.design/simple-icons:${slug}.svg?color=%23${color}`;
+  return slug ? `/tech/${slug}.svg` : "";
 }
